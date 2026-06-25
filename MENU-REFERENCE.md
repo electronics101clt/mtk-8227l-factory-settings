@@ -225,9 +225,30 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **Notes**: Critical for preserving custom configurations when updating firmware. metazone.bin contains device-specific calibration and settings. Always backup before flashing new firmware. File placed in root of USB drive.
 
 ### 305 - Direction Control Settings
-**Status**: Undocumented
-**Purpose**: UNKNOWN - Possibly screen orientation, navigation bar position, or steering wheel control direction
-**Notes**: **PRIMARY RESEARCH TARGET** - This setting may control navigation bar placement
+**Status**: ✅ Documented
+**Purpose**: Steering wheel control KEY1/KEY2 input resistor configuration
+**Interface**: Radio button selection screen with two setting rows
+**Settings**:
+- **Direction control key value ranges**:
+  - Level one
+  - Level two (selected in screenshot)
+  - Level three
+  - Level Four
+  - **Purpose**: Sensitivity/detection levels for steering wheel control button recognition
+- **PullUpSelection**:
+  - FixedPullUp_10K (10kΩ fixed pull-up resistor)
+  - VariablePullUp (selected in screenshot) - Auto-detecting pull-up
+  - FixedPullUp_0.47K (470Ω fixed pull-up resistor)
+  - **Purpose**: Configure pull-up resistor value for KEY1/KEY2 inputs
+**OK Button**: Save configuration
+**XDA References**:
+- Factory settings menu (password 8888) has 1K/10K/20K setting for max resistor values
+- KEY1 input expects 0-1K Ohms for button detection
+- Steering wheel controls connect KEY1 to ground using resistor arrays
+- Resistor values act as voltage divider to detect which button is pressed
+- Different vehicles use different resistor values for steering wheel controls
+- VariablePullUp allows auto-detection of vehicle's resistor scheme
+**Notes**: **NOT related to navigation bar orientation** (originally suspected purpose). This menu configures steering wheel control hardware interface. Direction = steering wheel control direction (not screen direction). Level one-four = sensitivity levels for resistor-based button detection. PullUpSelection matches pull-up resistor to vehicle's steering wheel control resistor array. FixedPullUp_10K for high resistance vehicles, FixedPullUp_0.47K for low resistance vehicles, VariablePullUp for automatic detection.
 
 ### 306 - IR Code Output Settings
 **Status**: Undocumented
