@@ -16,9 +16,17 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **Notes**: Prevents instant camera switching if briefly engaging reverse gear. Allows fine-tuning activation timing.
 
 ### 102 - Mute Settings
-**Status**: Undocumented
-**Purpose**: Audio muting configuration
-**Notes**:
+**Status**: ✅ Documented
+**Purpose**: Configure audio muting behavior and voltage detection threshold
+**Interface**: Voltage slider + 3 checkboxes
+**Options**:
+- **Voltage value**: ACC/mute wire voltage detection threshold (slider: 7V default)
+- **Hardware mute switch**: Enable physical mute wire input
+- **Key mute switch**: Enable mute button (steering wheel/panel)
+- **Mute switch during startup**: Mute audio during system boot
+**Screenshot**: [102-mute-settings.png](screenshots/102-mute-settings.png)
+**XDA References**: ACC voltage behavior discussed in power management threads
+**Notes**: Voltage threshold determines when ACC signal is recognized. All checkboxes enabled by default.
 
 ### 103 - Protocol Settings
 **Status**: Undocumented
