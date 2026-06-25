@@ -131,3 +131,35 @@ Testing performed on:
 User reported navigation bar moved from top (integrated with status bar) to bottom of screen. Attempting to identify which factory setting controls this behavior.
 
 **Suspected menu**: 305 - Direction Control Settings
+
+---
+
+## Utility Screens Found During Exploration
+
+### Protocol Box Upgrade Utility
+
+**Discovered**: 2026-06-25
+**Access**: Via menu 105 or 107 (CANBUS/Protocol settings submenu)
+
+**Interface**:
+- Protocol box upgrade screen
+- "Selection of agreement company" dropdown
+- "upgrade" button
+
+**Purpose**: Firmware upgrade utility for CANBUS protocol box
+- Updates CANBUS adapter firmware
+- Manufacturer-specific protocol updates
+- "Agreement company" = CANBUS protocol vendor selection
+
+**XDA Research**:
+- CANBUS boxes use manufacturer-specific protocols
+- Firmware updates available via factory menu
+- Chinese FTP server (xygala software) contains protocol firmware files
+- Factory settings includes CANBUS configuration options
+- Protocol Settings (menu 103) related to this upgrade utility
+
+**Sources**:
+- [Collection of 8227l firmware (android vers:6-9) | XDA Forums](https://xdaforums.com/t/collection-of-8227l-firmware-android-vers-6-9.4003935/)
+- [8227L YT9216BJ Head Unit | XDA Forums](https://xdaforums.com/t/8227l-yt9216bj-head-unit.4139307/)
+
+**Notes**: Not a numbered main menu entry. Utility screen accessible from CANBUS/protocol configuration menus. Critical for updating vehicle-specific CANBUS protocol definitions.
