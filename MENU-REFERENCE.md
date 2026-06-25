@@ -251,9 +251,30 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **Notes**: **NOT related to navigation bar orientation** (originally suspected purpose). This menu configures steering wheel control hardware interface. Direction = steering wheel control direction (not screen direction). Level one-four = sensitivity levels for resistor-based button detection. PullUpSelection matches pull-up resistor to vehicle's steering wheel control resistor array. FixedPullUp_10K for high resistance vehicles, FixedPullUp_0.47K for low resistance vehicles, VariablePullUp for automatic detection.
 
 ### 306 - IR Code Output Settings
-**Status**: Undocumented
-**Purpose**: Infrared remote control configuration
-**Notes**: Likely for steering wheel control IR codes
+**Status**: ✅ Documented
+**Purpose**: Configure infrared (IR) remote control protocol for steering wheel controls
+**Interface**: System Info Config Settings screen with protocol selection
+**Options**:
+- **IR protocol output** (selected in screenshot) - Generic IR protocol mode
+- **NEC protocol output** - NEC infrared protocol (standard consumer electronics IR protocol)
+**Buttons**:
+- **OK**: Save protocol selection
+- **Send**: Send/test IR codes
+**Status Display**: "No profile" - indicates no IR codes have been learned/configured yet
+**XDA References**:
+- 8227L primarily uses analog KEY1/KEY2 resistive inputs (not IR-based)
+- IR remote option available as alternative to resistive steering wheel controls
+- Learnable IR remote control accessories attach to steering wheel (under $10)
+- Units feature "KEY learning" or "Steering Wheel Learning" option to program IR codes
+- NEC protocol is standard IR protocol used in consumer electronics
+- Some YT9217 variants do not support IR remote functionality
+- IR remotes use learning/programming approach (not pre-programmed codes)
+- Modern vehicles with factory steering wheel controls need Connects2-style adaptor
+**Protocol Details**:
+- **NEC Protocol**: Standard infrared remote control protocol, pulse distance encoding
+- **IR protocol output**: Generic IR mode (may support multiple protocol types)
+- Learning mode allows programming custom IR codes to head unit functions
+**Notes**: Alternative to resistive KEY1/KEY2 steering wheel controls (menu 305). Allows using learnable IR remote controls instead of hardwired resistive controls. "No profile" indicates codes need to be learned via KEY learning mode in settings. NEC is industry-standard IR protocol. Used primarily when vehicle steering wheel controls are not compatible with resistive KEY1/KEY2 interface.
 
 ### 307 - Encoder Settings
 **Status**: Partially Documented
