@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8227L Factory Settings Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-tab {
+            padding: 0.75rem 1.5rem;
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .nav-tab:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .nav-tab.active {
+            background: #667eea;
+            color: white;
+        }
+
+        .section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .menu-item {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f9f9f9;
+            border-left: 4px solid #764ba2;
+            border-radius: 5px;
+        }
+
+        .menu-item h3 {
+            color: #764ba2;
+            margin-bottom: 0.75rem;
+            font-size: 1.4rem;
+        }
+
+        .menu-item h4 {
+            color: #667eea;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .menu-item p {
+            margin-bottom: 0.75rem;
+            line-height: 1.8;
+        }
+
+        .menu-item ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .menu-item li {
+            margin-bottom: 0.5rem;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+
+        .tip {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+
+        .password {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            font-weight: 600;
+        }
+
+        code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .menu-overview {
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MTK 8227L Factory Settings Guide</h1>
+            <p>Complete guide to Parameter Settings ver2.7_20181022</p>
+            <p>Everything you need to know about your Android car head unit settings</p>
+        </header>
+
+        <div class="nav-tabs">
+            <div class="nav-tab active" onclick="showSection('intro')">Introduction</div>
+            <div class="nav-tab" onclick="showSection('mounting')">Vehicle Settings (100)</div>
+            <div class="nav-tab" onclick="showSection('factory')">Factory Settings (300)</div>
+            <div class="nav-tab" onclick="showSection('engineering')">Engineering (700)</div>
+            <div class="nav-tab" onclick="showSection('passwords')">Passwords & Codes</div>
+        </div>
+
+        <!-- INTRODUCTION SECTION -->
+        <div id="intro" class="section">
+            <h2>Welcome to Your 8227L Settings Guide</h2>
+            <p>This guide explains every menu in your MTK 8227L Android car head unit in plain English. No technical jargon - just what each setting does and how to use it.</p>
+
+            <div class="password">
+                <strong>Quick Access Passwords:</strong><br>
+                • Factory Settings: <code>8888</code><br>
+                • Engineering Mode: <code>26959910</code><br>
+                • Boot Logo: <code>5678</code><br>
+                • Color Settings: <code>1616</code>
+            </div>
+
+            <h3>Menu Structure</h3>
+            <p>Your head unit has three main settings sections:</p>
+            <ul>
+                <li><strong>Mounting Vehicle Settings (100-108)</strong> - Basic car integration: backup camera, steering wheel controls, volume knob</li>
+                <li><strong>Factory Settings (301-311)</strong> - Display, touchscreen, Bluetooth, and system configuration</li>
+                <li><strong>Engineering Settings (701-708)</strong> - Advanced audio, USB, debugging, and power management</li>
+            </ul>
+
+            <img src="menu_current.png" alt="Menu Overview" class="menu-overview">
+        </div>
+
+        <!-- MOUNTING VEHICLE SETTINGS (100 SERIES) -->
+        <div id="mounting" class="section" style="display:none;">
+            <h2>Mounting Vehicle Settings (100 Series)</h2>
+            <p>These settings help your head unit work with your car's features.</p>
+
+            <div class="menu-item">
+                <h3>101 - Backup Camera Delay</h3>
+                <p><strong>What it does:</strong> Controls how long you need to stay in reverse before the backup camera turns on.</p>
+                <p><strong>Why it matters:</strong> Prevents the screen from switching to the camera if you just tap reverse by accident.</p>
+                <p><strong>Default:</strong> 0.5 seconds</p>
+                <p><strong>How to adjust:</strong> Use the slider to pick anywhere from 0.5 to several seconds.</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>102 - Mute Settings</h3>
+                <p><strong>What it does:</strong> Controls when your audio mutes and how the mute button works.</p>
+                <h4>Settings:</h4>
+                <ul>
+                    <li><strong>Voltage value (7V default):</strong> How much voltage triggers the mute wire</li>
+                    <li><strong>Hardware mute switch:</strong> Use a physical mute wire input</li>
+                    <li><strong>Key mute switch:</strong> Enable mute button on steering wheel or panel</li>
+                    <li><strong>Mute during startup:</strong> Keep audio off while the unit boots up</li>
+                </ul>
+            </div>
+
+            <div class="menu-item">
+                <h3>103 - Protocol Settings</h3>
+                <p><strong>What it does:</strong> Tells the head unit what kind of car you have so steering wheel controls work.</p>
+                <p><strong>What to do:</strong> Pick your car manufacturer (Hyundai, GM, Peugeot, etc.) and the unit will speak your car's language (CAN bus protocol).</p>
+                <div class="warning">
+                    <strong>Warning:</strong> Some users report this menu kicks them out after opening. If that happens, you may need a CANBUS adapter box.
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h3>104 - Reboot</h3>
+                <p><strong>What it does:</strong> Restarts your head unit.</p>
+                <p><strong>When to use it:</strong> After changing settings that require a reboot to take effect.</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>105 - Camera Settings</h3>
+                <p><strong>What it does:</strong> Everything related to your backup camera, parking sensors, 360 cameras, and even some car info like AC controls.</p>
+                <h4>Main Features:</h4>
+                <ul>
+                    <li><strong>Reverse track settings:</strong> Those guide lines that show where you're backing up</li>
+                    <li><strong>Parking radar:</strong> Configure your parking sensor beeps and display</li>
+                    <li><strong>Camera image:</strong> Flip, mirror, brightness, color adjustments</li>
+                    <li><strong>360 Camera:</strong> Setup for 360-degree camera systems</li>
+                    <li><strong>Temperature unit:</strong> Celsius or Fahrenheit</li>
+                    <li><strong>AC controls:</strong> Show your car's AC info on the head unit (needs CANBUS adapter)</li>
+                </ul>
+                <p>This menu has over 26 different options you can scroll through.</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>106 - Help and Feedback</h3>
+                <p><strong>What it does:</strong> Support and feedback interface.</p>
+                <p><em>Details to be added.</em></p>
+            </div>
+
+            <div class="menu-item">
+                <h3>107 - Protocol Debugging</h3>
+                <p><strong>What it does:</strong> Shows you real-time data from your car's computer (CANBUS).</p>
+                <p><strong>Why you'd use it:</strong> To see if your steering wheel controls are working, if the CANBUS adapter is connected, or to troubleshoot car integration issues.</p>
+                <p>You'll see a black screen with scrolling data. Press a steering wheel button and watch it appear in the log.</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>108 - Power Amplifier Settings</h3>
+                <p><strong>What it does:</strong> Controls how much power goes to your speakers.</p>
+                <p><strong>Range:</strong> 0-100%</p>
+                <div class="tip">
+                    <strong>Tip:</strong> Set it around 50% to avoid distortion. If you set it to 100%, your audio will be too loud and sound bad.
+                </div>
+            </div>
+        </div>
+
+        <!-- FACTORY SETTINGS (300 SERIES) -->
+        <div id="factory" class="section" style="display:none;">
+            <h2>Factory Settings (300 Series)</h2>
+            <p>Core system configuration - display, touchscreen, Bluetooth, and more.</p>
+
+            <div class="password">
+                <strong>Access Code:</strong> <code>8888</code> (enter in Car Settings → Factory Settings)
+            </div>
+
+            <div class="menu-item">
+                <h3>301 - Color Settings</h3>
+                <p><strong>What it does:</strong> Adjust your screen's brightness, contrast, color, and saturation.</p>
+                <p><strong>What you'll see:</strong> A picture of an Asian woman - this is your reference image while adjusting colors.</p>
+                <div class="tip">
+                    <strong>Tip:</strong> The screen says "Close the car small light" - this means turn off your dome light (interior cabin light) so you can see the screen clearly while adjusting.
+                </div>
+                <div class="password">
+                    <strong>Advanced Access:</strong> PIN <code>1616</code> gives you detailed brightness/contrast/hue/saturation/tone controls
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h3>302 - Production Management</h3>
+                <p><strong>What it does:</strong> This is for the factory workers who built your head unit.</p>
+                <p><strong>Can you access it?</strong> No - requires manufacturer account credentials that aren't public.</p>
+                <p><strong>What it's for:</strong> Quality control testing during manufacturing.</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>303 - Touch Settings</h3>
+                <p><strong>What it does:</strong> Calibrate your touchscreen and configure touch buttons.</p>
+                <h4>Main Functions:</h4>
+                <ul>
+                    <li><strong>start:</strong> Begin touchscreen calibration</li>
+                    <li><strong>clear:</strong> Reset calibration data</li>
+                    <li><strong>X axis Y axis swap:</strong> Fix if your touch is backwards/mirrored</li>
+                    <li><strong>Touch screen resolution:</strong> Set the correct resolution for your panel</li>
+                </ul>
+                <div class="tip">
+                    <strong>Quick Calibration:</strong> Put 5 fingers on the screen at once to trigger a fast calibration mode.
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h3>304 - Export Config</h3>
+                <p><strong>What it does:</strong> Backs up all your settings to a USB drive.</p>
+                <p><strong>How it works:</strong></p>
+                <ol>
+                    <li>Insert USB drive</li>
+                    <li>Open this menu</li>
+                    <li>Adjust volume, language, Bluetooth name if you want</li>
+                    <li>Click export</li>
+                    <li>Find <code>metazone.bin</code> file on your USB</li>
+                </ol>
+                <div class="warning">
+                    <strong>Important:</strong> Always backup before flashing new firmware! This saves all your custom settings.
+                </div>
+                <p><strong>What's included:</strong> Button mappings, touchscreen calibration, volume levels, Bluetooth settings, language.</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>305 - Direction Control Settings</h3>
+                <p><strong>What it does:</strong> Configures how your steering wheel controls talk to the head unit.</p>
+                <h4>Settings:</h4>
+                <ul>
+                    <li><strong>Level one through Four:</strong> Sensitivity levels for button detection</li>
+                    <li><strong>FixedPullUp_10K:</strong> For cars with high resistance steering wheel buttons</li>
+                    <li><strong>FixedPullUp_0.47K:</strong> For cars with low resistance buttons</li>
+                    <li><strong>VariablePullUp:</strong> Let the unit auto-detect (recommended)</li>
+                </ul>
+                <p><strong>Note:</strong> This is NOT for rotating your screen - it's for steering wheel control hardware.</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>306 - IR Code Output</h3>
+                <p><strong>What it does:</strong> Configure infrared remote control for your steering wheel.</p>
+                <p><strong>When you'd use it:</strong> If you have an add-on IR remote ($10 learning remote) instead of factory steering wheel controls.</p>
+                <h4>Options:</h4>
+                <ul>
+                    <li><strong>NEC protocol:</strong> Standard consumer electronics IR protocol</li>
+                    <li><strong>IR protocol:</strong> Generic IR mode</li>
+                </ul>
+                <p>You'll need to use "KEY learning" mode to program the remote buttons.</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>307 - Encoder Settings</h3>
+                <p><strong>What it does:</strong> Configures your volume knob.</p>
+                <h4>Detection Methods:</h4>
+                <ul>
+                    <li><strong>I/O detect:</strong> Standard rotary encoder (most common)</li>
+                    <li><strong>AD detect 1/2/3:</strong> Analog detection methods</li>
+                </ul>
+                <h4>Direction:</h4>
+                <ul>
+                    <li><strong>Positive:</strong> Clockwise = louder</li>
+                    <li><strong>Negative:</strong> Clockwise = quieter (reversed)</li>
+                </ul>
+                <div class="warning">
+                    <strong>Common Issue:</strong> After a crash, volume knob may stop working. You may need a specific key.ini file from your seller to fix it.
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h3>308 - Physical Buttons Study</h3>
+                <p><strong>What it does:</strong> Teaches the head unit what each physical button does.</p>
+                <h4>How to use it:</h4>
+                <ol>
+                    <li>Click "start"</li>
+                    <li>Click a button name on screen (power, volume up, home, etc.)</li>
+                    <li>Press the actual physical button</li>
+                    <li>The unit learns which button is which</li>
+                    <li>Repeat for all buttons</li>
+                    <li>Click "save"</li>
+                </ol>
+                <div class="tip">
+                    <strong>When to use:</strong> After firmware updates when buttons stop working, or when remapping buttons to different functions.
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h3>309 - Tire Pressure Settings</h3>
+                <p><strong>What it does:</strong> Set alarm thresholds for tire pressure monitoring system (TPMS).</p>
+                <p><strong>Requirements:</strong> You need external TPMS sensors (USB or Bluetooth).</p>
+                <h4>What you can set:</h4>
+                <ul>
+                    <li><strong>Upper pressure limit:</strong> 270 (PSI or kPa) - alarm when tire too full</li>
+                    <li><strong>Lower pressure limit:</strong> 170 - alarm when tire too low</li>
+                    <li><strong>Temperature limit:</strong> 65°C - alarm when tire overheating</li>
+                </ul>
+                <p>Configure separately for each tire: left front, left rear, right front, right rear.</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>310 - Lock Screen Mode</h3>
+                <p><strong>What it does:</strong> Controls what the screen shows when you turn off your car.</p>
+                <h4>Options:</h4>
+                <ul>
+                    <li><strong>Time mode:</strong> Show a clock when car is off (quick time check)</li>
+                    <li><strong>Screen off mode:</strong> Turn screen completely off (saves power)</li>
+                </ul>
+                <p><strong>Default:</strong> Screen off mode</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>311 - Key Light Settings</h3>
+                <p><strong>What it does:</strong> Change the color of your button backlights (if your unit has RGB LEDs).</p>
+                <h4>Controls:</h4>
+                <ul>
+                    <li><strong>Red/Green/Blue sliders:</strong> Mix colors (0-255 each)</li>
+                    <li><strong>Brightness level:</strong> How bright (0-100%)</li>
+                    <li><strong>Flicker frequency:</strong> PWM dimming speed</li>
+                    <li><strong>Color palette:</strong> Quick presets (red, orange, yellow, green, indigo, blue, white)</li>
+                </ul>
+                <div class="warning">
+                    <strong>Important:</strong> If you see "Please open the debug button lamp lights!!" - your unit only has white LEDs, not RGB. RGB controls won't work on budget units.
+                </div>
+            </div>
+        </div>
+
+        <!-- ENGINEERING SETTINGS (700 SERIES) -->
+        <div id="engineering" class="section" style="display:none;">
+            <h2>Engineering Settings (700 Series)</h2>
+            <p>Advanced settings for power users - audio tuning, USB config, debugging tools.</p>
+
+            <div class="menu-item">
+                <h3>701 - USB Settings</h3>
+                <p><strong>What it does:</strong> Audio controls, boot logo customization, and USB configuration - all in one menu.</p>
+
+                <h4>Audio Tab - Volume Controls</h4>
+                <p>6 independent volume sliders (0-30 each):</p>
+                <ul>
+                    <li><strong>Media:</strong> Music and video apps</li>
+                    <li><strong>GS:</strong> GPS navigation voice</li>
+                    <li><strong>BackCar:</strong> Backup camera beeps</li>
+                    <li><strong>Ring:</strong> Phone ringtones</li>
+                    <li><strong>Call:</strong> Phone call volume</li>
+                    <li><strong>Auxin:</strong> Auxiliary input (external devices)</li>
+                </ul>
+
+                <h4>Audio Tab - Sound Effects</h4>
+                <ul>
+                    <li><strong>Assistant/Alternate:</strong> Voice assistant volumes (0-30)</li>
+                    <li><strong>Bass/Alto/Treble:</strong> 3-band equalizer</li>
+                    <li><strong>Balance:</strong> Left/right speaker balance</li>
+                    <li><strong>Loudness:</strong> Boost bass at low volumes</li>
+                </ul>
+
+                <h4>Logo Tab - Custom Boot Logo</h4>
+                <p><strong>How to change your boot logo:</strong></p>
+                <ol>
+                    <li>Create folder "Car_Logo" on USB drive root</li>
+                    <li>Put your logo image in there (BMP format, 1024x600 resolution)</li>
+                    <li>Insert USB</li>
+                    <li>Click "Set path" → select Car_Logo folder</li>
+                    <li>Click "Set logo"</li>
+                    <li>Reboot from factory settings (code 8888)</li>
+                </ol>
+                <div class="password">
+                    <strong>Quick Access:</strong> PIN <code>5678</code> opens boot logo window directly
+                </div>
+
+                <h4>Other Tab - USB Configuration</h4>
+                <ul>
+                    <li><strong>USB port0/port1 protocol:</strong> USB 2.0 speed settings</li>
+                    <li><strong>USB mode:</strong> Device (for PC connection) or Host (for USB devices)</li>
+                    <li><strong>USB0/USB1 DVR Enhancement:</strong> Enable dashcam recording from USB cameras</li>
+                </ul>
+            </div>
+
+            <div class="menu-item">
+                <h3>702 - Clear Test File</h3>
+                <p><strong>What it does:</strong> Deletes factory test audio and video files.</p>
+                <p><strong>Why you'd do it:</strong> Free up storage space. These test files were used during manufacturing and serve no purpose now.</p>
+                <div class="warning">
+                    <strong>Warning:</strong> This cannot be undone. Files are permanently deleted.
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <h3>703 - Debug Touch</h3>
+                <p><strong>What it does:</strong> Real-time touchscreen debugging.</p>
+                <h4>Features:</h4>
+                <ul>
+                    <li><strong>tp_pixel:</strong> Shows touch panel resolution and hardware info</li>
+                    <li><strong>key position:</strong> Shows physical button coordinates</li>
+                    <li><strong>coordinate (checkbox):</strong> Display X/Y coordinates as you touch the screen</li>
+                    <li><strong>print coordinate (checkbox):</strong> Log touch data to file</li>
+                </ul>
+                <p><strong>When to use:</strong> Diagnosing dead zones, calibration issues, or touch accuracy problems.</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>704 - App Settings</h3>
+                <p><strong>What it does:</strong> Control which apps auto-start and how audio works between apps.</p>
+
+                <h4>Bootup Apps</h4>
+                <p>Pick up to 5 apps to launch automatically when you start your car.</p>
+                <div class="tip">
+                    <strong>Tip:</strong> Fewer auto-start apps = faster boot time. Only pick apps you always use.
+                </div>
+
+                <h4>Audio Mutex</h4>
+                <p>Controls which apps can interrupt each other's audio.</p>
+                <p><strong>Common problem:</strong> Navigation speaks, radio mutes, radio never comes back on.</p>
+                <p>Use this to configure which apps can steal audio focus from others.</p>
+
+                <h4>Navigation Apps</h4>
+                <p>Special settings for navigation app audio behavior.</p>
+                <p><em>Settings require restart to take effect.</em></p>
+            </div>
+
+            <div class="menu-item">
+                <h3>705 - Touch Test</h3>
+                <p><strong>What it does:</strong> Simple fullscreen touch test.</p>
+                <p><strong>How to use:</strong> Touch the screen - see "Please touch the screen to test"</p>
+                <p>Drag your finger everywhere to find dead zones or unresponsive areas.</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>706 - Bluetooth Pairing Mode</h3>
+                <p><strong>What it does:</strong> Choose how Bluetooth pairing works.</p>
+                <h4>Options:</h4>
+                <ul>
+                    <li><strong>Auto Pair:</strong> Phone connects automatically, no PIN needed (convenient but less secure)</li>
+                    <li><strong>Password Pair:</strong> Requires PIN 0000 during pairing (more secure)</li>
+                </ul>
+                <p><strong>Requires restart</strong> to take effect.</p>
+                <p>Change Bluetooth name and password in menu 304.</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>707 - MCU Info Test</h3>
+                <p><strong>What it does:</strong> Tests communication between Android and the MCU (microcontroller that controls car features).</p>
+                <h4>Controls:</h4>
+                <ul>
+                    <li><strong>start:</strong> Begin communication test</li>
+                    <li><strong>clear:</strong> Clear the output window</li>
+                    <li><strong>stop:</strong> End test</li>
+                </ul>
+                <p><strong>When to use:</strong> If steering wheel controls aren't working, or after firmware updates.</p>
+                <p>You'll see serial data scrolling. This shows the Android and MCU are talking to each other.</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>708 - Engineering Test Debugging</h3>
+                <div class="password">
+                    <strong>Password Required:</strong> <code>26959910</code>
+                </div>
+                <p><strong>What it does:</strong> Advanced diagnostics and the most important setting - power management.</p>
+
+                <h4>Power Management (MOST IMPORTANT)</h4>
+                <div class="warning">
+                    <strong>Battery Drain Fix:</strong><br>
+                    Sleep mode draws 5W continuously = dead car battery<br>
+                    Solution: Change to "Direct Shutdown Mode"
+                </div>
+                <ul>
+                    <li><strong>Sleep Mode:</strong> Unit goes to sleep when car turns off BUT keeps draining battery (~5W)</li>
+                    <li><strong>Direct Shutdown Mode:</strong> Unit completely turns off, zero power drain (RECOMMENDED)</li>
+                </ul>
+                <p>Requires reboot after changing.</p>
+
+                <h4>Audio (Hardware Testing)</h4>
+                <p>Advanced audio controls - set all levels to maximum (10) for best volume, then reboot.</p>
+
+                <h4>Phone / Connectivity</h4>
+                <p>Diagnostic tools for testing phone connections, WiFi, Bluetooth, cellular.</p>
+
+                <div class="tip">
+                    <strong>Alternative Access:</strong> Factory Settings (8888) → USB Info → USB → Engineering Mode
+                </div>
+            </div>
+        </div>
+
+        <!-- PASSWORDS & CODES -->
+        <div id="passwords" class="section" style="display:none;">
+            <h2>All Passwords & Access Codes</h2>
+
+            <div class="menu-item">
+                <h3>Main Access Codes</h3>
+                <ul>
+                    <li><code>8888</code> - Factory Settings (most common password)</li>
+                    <li><code>26959910</code> - Engineering Test Debugging (advanced diagnostics)</li>
+                    <li><code>5678</code> - Custom Boot Logo window</li>
+                    <li><code>1616</code> - Color Settings (brightness/contrast/hue/saturation)</li>
+                    <li><code>8877</code> - atc_factory menu (Audio → Sound Effect)</li>
+                    <li><code>1414</code> - Shutdown/Restart</li>
+                    <li><code>1111</code> - Memory status</li>
+                    <li><code>5555</code> - Export advanced settings</li>
+                </ul>
+            </div>
+
+            <div class="menu-item">
+                <h3>Alternative Passwords (Some Units)</h3>
+                <ul>
+                    <li><code>000000</code> - Factory settings (some units)</li>
+                    <li><code>1234</code> - Physical button study (some units)</li>
+                    <li><code>9191</code> - Factory reset (WARNING: use carefully)</li>
+                </ul>
+            </div>
+
+            <div class="menu-item">
+                <h3>Default Bluetooth Settings</h3>
+                <ul>
+                    <li><strong>Bluetooth Name:</strong> CarBT</li>
+                    <li><strong>Bluetooth Password:</strong> 0000</li>
+                </ul>
+                <p>Change these in menu 304 (Export The Config)</p>
+            </div>
+
+            <div class="menu-item">
+                <h3>Important File Locations</h3>
+                <ul>
+                    <li><code>/storage/emulated/0/calibration.ini</code> - Touch calibration data</li>
+                    <li><code>metazone.bin</code> - Exported settings backup (created on USB)</li>
+                    <li><code>/dev/video1</code> and <code>/dev/video2</code> - USB camera devices</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.style.display = 'none');
+
+            // Show selected section
+            document.getElementById(sectionId).style.display = 'block';
+
+            // Update active tab
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
