@@ -673,9 +673,82 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **Notes**: Real-time touchscreen diagnostic tool for troubleshooting touch accuracy and calibration issues. tp_pixel retrieves touch panel hardware specifications (resolution, pixel configuration). key position retrieves physical button coordinate mappings. coordinate checkbox enables on-screen real-time X/Y coordinate display as you touch the screen. print coordinate enables logging of touch data to console or file for analysis. Gray test area provides visual feedback for touch testing. Essential tool for diagnosing common 8227L touchscreen issues like left-side accuracy problems (X0-X200 range). Similar to Android Developer Options "Pointer Location" feature but integrated into factory settings. Use with menu 303 (Touch Settings) for calibration adjustments and X/Y axis corrections.
 
 ### 704 - App Settings
-**Status**: Undocumented
-**Purpose**: Application-level configuration
-**Notes**: May access hidden app settings
+**Status**: ✅ Documented
+**Purpose**: Configure auto-start apps, audio mutex behavior, and navigation app settings
+**Interface**: Three-tab configuration screen with app selection checkboxes
+**Header**: "Restart to take effect" (red text) - settings require system reboot to apply
+**Tabs**:
+
+#### BOOTUP APPS SETTINGS
+**Prompt**: "pls select apps for boot running ,no more than 5 ,now 0 ."
+**Purpose**: Select which apps automatically launch at system startup
+**Limit**: Maximum 5 apps can be selected for auto-start
+**App List**: Shows all installed apps with checkboxes:
+- Radio
+- Welcome
+- Microsoft Launcher
+- Waze
+- Chrome
+- Netflix
+- Spotify
+- (and other installed apps)
+**Controls**:
+- **CLEAR ALL button**: Deselect all auto-start apps
+- **Checkboxes**: Select/deselect individual apps for auto-start
+**Counter**: "now 0" displays current number of apps selected (0-5)
+**Behavior**:
+- Selected apps launch automatically on boot
+- Reduces boot time by limiting auto-start apps to 5 maximum
+- Apps launch in background after system boot completes
+- Improves system performance by preventing excessive auto-start apps
+
+#### AUDIO MUTEX APPS SETTINGS
+**Purpose**: Configure audio focus exclusivity and ducking behavior
+**Function**: Control which apps maintain exclusive audio focus (mutex = mutual exclusion)
+**Audio Focus Types**:
+- **Exclusive**: App takes full audio focus, muting other apps completely
+- **Concurrent**: App shares audio focus, allows audio ducking (volume reduction)
+- **Reject**: App cannot take audio focus
+**Common Issues**:
+- Navigation app voice guidance mutes radio, radio doesn't unmute after
+- Music stops when navigation speaks, only navigation voice remains
+- Some apps (Spotify) unmute properly, others (radio) don't
+**Configuration**: Select apps that should have exclusive audio mutex control
+- Apps NOT selected share audio focus (concurrent mode)
+- Apps selected get exclusive focus, pause/mute other audio sources
+**Audio Contexts**: Used for routing, volume groups, audio focus, ducking management
+
+#### NAVIGATION APPS SETTINGS
+**Purpose**: Configure navigation-specific app behavior and audio integration
+**Function**: Settings for GPS/navigation apps audio interruption and resumption
+**Related Issues**:
+- Navigation voice guidance audio ducking settings
+- Radio/media resumption after navigation voice prompts
+- Volume management during navigation announcements
+**Configuration**: Select navigation apps and configure their audio behavior
+- Controls how navigation interrupts media playback
+- Manages audio restoration after navigation announcements
+
+**Apply Changes**: Restart system for settings to take effect
+
+**XDA References**:
+- Factory settings accessed via PIN code 8888
+- Auto-start app limitation of 5 apps maximum
+- Users report audio mutex issues: radio stops when navigation speaks, doesn't resume
+- Some apps (Spotify) properly unmute after navigation, others (radio) don't
+- Mutex settings in factory mode don't always resolve audio resumption issues
+- Radio app may freeze after first install, requires factory settings RADIO menu configuration
+- Apps can be checked for startup on boot in Factory Settings (8888)
+**Sources**:
+- [Question - How to break the 5 auto startup apps limitation | XDA Forums](https://xdaforums.com/t/how-to-break-the-5-auto-startup-apps-limitation.4703574/)
+- [8227L android unit 8.1 chinese | XDA Forums](https://xdaforums.com/t/8227l-android-unit-8-1-chinese.3905535/)
+- [8227L android unit 8.1 chinese | Page 3 | XDA Forums](https://xdaforums.com/t/8227l-android-unit-8-1-chinese.3905535/page-3)
+- [Android headunit (8227L) - call volume / radio / mic adjustment | XDA Forums](https://xdaforums.com/t/android-headunit-8227l-call-volume-radio-volume-mic-volume-adjustment-help-using-zlink-for-apple-carplay.4549393/)
+- [Audio focus | Android Open Source Project](https://source.android.com/docs/automotive/audio/audio-focus)
+- [Car audio configuration | Android Open Source Project](https://source.android.com/docs/automotive/audio/audio-policy-configuration)
+- [Android head unit. Some apps no sound | XDA Forums](https://xdaforums.com/t/android-head-unit-some-apps-no-sound-radio-app-has-sound.3876342/)
+
+**Notes**: Critical app management interface controlling startup behavior and audio focus. BOOTUP APPS SETTINGS limits auto-start to 5 apps maximum to improve boot time and system performance. AUDIO MUTEX APPS SETTINGS controls audio focus exclusivity - essential for managing conflicts between navigation voice guidance and media playback (radio, music apps). Common problem: navigation apps take exclusive audio focus, mute radio/media, then don't properly restore audio after voice prompt ends. NAVIGATION APPS SETTINGS specifically manages navigation app audio integration and interruption behavior. Settings require system restart to take effect. Related to Android Automotive audio focus system (exclusive/concurrent/reject modes). Audio mutex configuration attempts to resolve issues where radio remains muted after navigation speaks, though XDA users report mixed success with these settings.
 
 ### 705 - Touch Test
 **Status**: Undocumented
