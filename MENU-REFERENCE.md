@@ -12,7 +12,6 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **Interface**: Slider control (adjustable in seconds)
 **Range**: 0.5s - several seconds
 **Default**: 0.5s
-**Screenshot**: [101-backcar-delay-time.png](screenshots/101-backcar-delay-time.png)
 **Notes**: Prevents instant camera switching if briefly engaging reverse gear. Allows fine-tuning activation timing.
 
 ### 102 - Mute Settings
@@ -24,7 +23,6 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 - **Hardware mute switch**: Enable physical mute wire input
 - **Key mute switch**: Enable mute button (steering wheel/panel)
 - **Mute switch during startup**: Mute audio during system boot
-**Screenshot**: [102-mute-settings.png](screenshots/102-mute-settings.png)
 **XDA References**: ACC voltage behavior discussed in power management threads
 **Notes**: Voltage threshold determines when ACC signal is recognized. All checkboxes enabled by default.
 
