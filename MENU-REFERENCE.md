@@ -828,62 +828,78 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 
 ### 707 - MCU Info Test
 **Status**: ✅ Documented
-**Purpose**: Display MCU (Microcontroller Unit) firmware version and system information
-**Interface**: System information display screen
-**Function**: Shows MCU firmware details and hardware specifications
-**Information Displayed**:
-- **MCU Version**: Firmware version identifier
-  - Common versions: TS907, TS907.190518(H), JCCM20, JCCM20-0-2022.05.19_17:25
-  - Format varies by manufacturer and board type
-- **System Specifications**:
-  - Android version (e.g., XY auto 3.1, 8227L_demo)
-  - MCU revision (e.g., MCU 3.1)
-  - DDR memory size (e.g., 1G, 2G)
-  - Flash storage size (e.g., 16G, 32G)
-  - CPU type and speed (e.g., A7 1.3GHz x 4)
-  - Display resolution
-- **Board Type Identification**:
-  - MCU version starting with MTC (MTCB, MTCC, MTCD, MTCE) identifies board type
-  - Helps identify compatible firmware and hardware configuration
-**MCU Role**:
-- Acts as bridge between vehicle hardware and Android system
+**Purpose**: Test MCU (Microcontroller Unit) serial communication and UART connection
+**Interface**: Serial communication monitor with control buttons
+**Display Area**: Gray/tan output window showing real-time MCU communication data
+**Controls**:
+- **start**: Begin MCU serial communication test
+- **clear**: Clear output display window
+- **stop**: Stop MCU communication test
+**Function**: Test and debug UART serial communication between Android system and MCU
+**Communication Details**:
+- **Protocol**: UART (Universal Asynchronous Receiver-Transmitter) serial communication
+- **Data Flow**: Bidirectional communication between Android SoC and MCU
+- **Output Display**: Real-time serial data stream from MCU
+- **Baud Rate**: Preset by firmware (typically 9600, 19200, or 115200)
+- **Format**: 8N1 (8 data bits, no parity, 1 stop bit) standard
+**Test Procedure**:
+1. Click "start" to initiate MCU communication test
+2. Output window displays serial data from MCU
+3. Monitor for communication errors or garbled data
+4. Click "clear" to reset output display
+5. Click "stop" to end communication test
+**Diagnostic Uses**:
+- Test MCU UART connection integrity
+- Verify serial communication between Android and MCU
+- Troubleshoot "MCU Uart Error" problems
+- Debug MCU firmware communication issues
+- Verify baud rate and data format correctness
+- Check TX/RX line connections and signal quality
+**Common Issues**:
+- **Garbled characters**: Wrong baud rate on one end
+- **No data**: TX/RX lines swapped or disconnected
+- **Random characters/resets**: Missing or poor common ground
+- **MCU Uart Error**: Persistent after factory reset, requires firmware reflash
+**MCU Communication Role**:
+- MCU acts as bridge between vehicle hardware and Android system
 - Manages vehicle-specific integrations (steering wheel controls, CANBUS, sensors)
-- Controls hardware functions not directly accessible to Android
-- Enables special interactions between vehicle and head unit
+- UART serial connection carries commands and data between Android and MCU
+- MCU controls hardware functions not directly accessible to Android
+- Serial protocol enables special interactions between vehicle and head unit
 **Use Cases**:
-- Verify MCU firmware version before updates
-- Identify board type for firmware compatibility
-- Troubleshoot hardware integration issues
-- Confirm system specifications (RAM, storage, CPU)
-- Determine compatible firmware for updates
-- Validate advertised specifications vs actual hardware
-**Alternative Access Methods**:
-- Settings → About → MCU Version
-- Settings → Information → Tap MCU Version 5 times (reveals detailed info)
-- Settings → System → Update MCU
-**Firmware Update Considerations**:
-- MCU version must match hardware exactly to avoid bricking device
-- Different brands using same chipset require different MCU firmware
-- TS907 common on Junsun MT8227L units
-- JCCM20 common on AC8227L Android 12/13 units
-- Minor firmware differences can cause boot loops or "internal" errors
+- Test MCU serial communication after firmware updates
+- Diagnose "MCU Uart Error" communication failures
+- Verify UART connection after hardware repairs or modifications
+- Debug steering wheel control or CANBUS communication issues
+- Troubleshoot MCU not responding to Android commands
+- Reverse engineer MCU communication protocol (developers)
+- Validate TX/RX wiring and signal integrity
+**Related Information Access**:
+- Settings → About → MCU Version (displays MCU firmware version)
+- Settings → Information → Tap MCU Version 5 times (detailed MCU info)
+- Settings → System → Update MCU (firmware update interface)
+**MCU Protocol Reverse Engineering**:
+- Developers on XDA have reverse engineered MainUI apk
+- MCU communication protocol has been extracted and documented
+- Protocol information shared on XDA for custom development
+- Allows custom MCU command implementation and debugging
 **XDA References**:
 - Factory settings accessed via PIN code 8888
+- "MCU Uart Error" reported by users - persistent after factory reset
+- Developers reverse engineering MCU communication protocol from MainUI apk
+- Serial communication protocol information extracted and shared
+- Common UART debugging: TX/RX swap if no communication
+- Garbled characters indicate wrong baud rate
+- Random characters/resets indicate common ground issues
 - Engineering mode provides additional MCU diagnostic tools
-- MCU firmware updates available from manufacturers or XDA forums
-- Use "Fake Device Test" app from Play Store to verify specifications
-- XDA threads contain comprehensive MCU firmware collections
-- Accurate MCU version critical for firmware updates to prevent bricking
 **Sources**:
-- [X5PH MCU TS907 AC8227L ALPS Firmware Guide | Annssolutions](https://annssolutions.com/x5ph-mcu-ts907-ac8227l-alps-firmware/)
-- [Need Stable MCU Update for TS907.190518(H) | XDA Forums](https://xdaforums.com/t/need-stable-mcu-update-for-ts907-190518-h-8227l-android-head-unit-bluetooth-button-issues.4750756/)
-- [Need Firmware for 8227L_demo Android 10 (MCU: JCCM20) | XDA Forums](https://xdaforums.com/t/need-firmware-for-8227l_demo-android-10-mcu-jccm20.4753571/)
-- [AC8227L 1/16GB alps 8227L_demo | XDA Forums](https://xdaforums.com/t/ac8227l-1-16gb-alps-8227l_demo-yt9216bj-or-yt9218-or-yt9260.4168563/)
+- [Junsun V1 - TWRP, Root, Discussion | XDA Forums](https://xdaforums.com/t/junsun-v1-twrp-root-discussion-and-more-ac8227l-android-8-1-2gb-32gb.4192003/page-8)
+- [need help for Mcu Uart Error | XDA Forums](https://xdaforums.com/t/need-help-for-mcu-uart-error.4521603/)
+- [AC8227L - Mediatek + unknown MCU - Bricked device | XDA Forums](https://forum.xda-developers.com/android-auto/android-head-units/mt8277l-mediatek-components-unknown-mcu-t3915844)
 - [Collection of 8227l firmware | XDA Forums](https://xdaforums.com/t/collection-of-8227l-firmware-android-vers-6-9.4003935/)
-- [What Is Mcu Update Android? | SafeWiper](https://www.safewiper.com/blog/what-is-mcu-update-android.html)
-- [Which MTC is my Android headunit? | Android-Headunits.com](https://android-headunits.com/which-mtc-is-my-android-headunit/)
-- [No MCU information showing up in settings? | XDA Forums](https://xdaforums.com/t/no-mcu-information-showing-up-in-settings.4061297/)
-**Notes**: Critical diagnostic tool for identifying MCU firmware version and system hardware specifications. MCU (Microcontroller Unit) acts as hardware bridge between vehicle systems and Android OS, managing steering wheel controls, CANBUS communication, and vehicle-specific integrations. Menu displays MCU version (TS907, JCCM20, etc.), Android version, memory (DDR), storage (Flash), CPU details, and display resolution. Essential for verifying specifications before firmware updates - incorrect MCU firmware can brick the device. Common MCU versions: TS907 series for Junsun/MT8227L units, JCCM20 series for AC8227L Android 12/13 units. MCU version starting with "MTC" indicates board type (MTCB/MTCC/MTCD/MTCE). Use this menu before updating firmware to ensure compatibility. Alternative access via Settings → About or Settings → System → Update MCU. XDA forums contain comprehensive MCU firmware collections for various 8227L variants.
+- [UART Serial Communication Guide | NodeLoop](https://nodeloop.org/guides/uart-serial-guide/)
+- [Serial Terminal Basics | SparkFun Learn](https://learn.sparkfun.com/tutorials/terminal-basics/all)
+**Notes**: Critical diagnostic tool for testing UART serial communication between Android system and MCU microcontroller. Interface provides real-time serial monitor with start/clear/stop controls. MCU acts as hardware bridge between vehicle systems (steering wheel controls, CANBUS, sensors) and Android OS. UART connection carries bidirectional commands and data between Android SoC and MCU. Use this menu to diagnose "MCU Uart Error" failures, verify serial communication after firmware updates or hardware repairs, and troubleshoot steering wheel control or CANBUS issues. Start button initiates communication test, output window displays real-time serial data stream, clear button resets display, stop button ends test. Common issues: garbled characters indicate wrong baud rate, no data suggests TX/RX swap or disconnection, random characters/resets indicate ground problems. Developers have reverse engineered MCU protocol from MainUI apk for custom implementations. Essential for debugging hardware integration problems and validating UART signal integrity. Related to menu 708 (Engineering Test Debugging) for additional diagnostic functions.
 
 ### 708 - Engineering Test Debugging
 **Status**: Undocumented
