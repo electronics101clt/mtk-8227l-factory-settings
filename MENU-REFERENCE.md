@@ -504,6 +504,37 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 - Place logo image named "default_logo.bmp" or "default_logo.png"
 - Insert USB and reboot from factory settings
 
+#### Other Sidebar - USB Configuration
+**Interface**: USB port protocol and DVR enhancement settings
+**Settings**:
+- **usb port1 protocol**: USB protocol version for port 1
+  - Current: usb2_0 (USB 2.0 protocol)
+  - Options: Likely usb1_1, usb2_0, usb3_0 depending on hardware
+- **usb port0 protocol**: USB protocol version for port 0
+  - Current: usb2_0 (USB 2.0 protocol)
+  - Options: Likely usb1_1, usb2_0, usb3_0 depending on hardware
+- **usb mode**: USB connection mode
+  - Current: device (Android device mode - allows PC connection/ADB)
+  - Options: Likely device, host, OTG
+- **Engineer mode**: Access to engineering/diagnostic tools
+  - Access: Factory Settings → USB Info → USB → "Engineering Mode"
+  - Contains: Phone, connectivity, and audio options
+**DVR Enhancement Checkboxes**:
+- **USB0 DVR Enhancement**: Enable enhanced DVR/dashcam recording for USB port 0 ✓ (checked)
+  - Enables USB camera recording features on USB0
+  - Part of built-in Car DVR System
+  - USB cameras detected as /dev/video1 or /dev/video2
+- **USB1 DVR Enhancement**: Enable enhanced DVR/dashcam recording for USB port 1 ✓ (checked)
+  - Enables USB camera recording features on USB1
+  - Supports front/rear USB camera configurations
+  - Recordings saved to GPS card/storage automatically
+**DVR Functionality**:
+- Built-in Car DVR System for USB camera recording
+- Connect USB camera to use Car Record function
+- Automatic recording to GPS card/SD storage
+- Multi-camera support (front/rear) via USB0/USB1
+- USB cameras may require specific firmware/drivers
+
 **Sidebar Navigation Icons**:
 - **Audio** (purple speaker icon) - Volume settings + Sound Effect pages
 - **Logo** (green icon) - Boot logo/splash screen configuration
@@ -513,6 +544,7 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 - Factory settings accessed via PIN code 8888 (advanced settings)
 - Code 8877 provides access to atc_factory menu → Audio → Sound Effect → Bass/Alto/Treble
 - Code 5678 opens custom boot logo window (com.ts.logoset.LogoSetMainActivity)
+- Code 26959910 accesses "Engineering test debugging" password
 - VOLUME section in factory menu controls all audio levels
 - Some Music apps allow tone adjustments (bass/treble) but not balance/fader
 - Balance only changeable in Car settings (no fader option for front/rear speakers)
@@ -524,6 +556,12 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 - After setting boot logo, reboot from factory settings (code 8888) to apply
 - Bootlogo selector app data must be cleared if boot animation doesn't appear
 - Some newer variants (Android 13) may not support boot logo replacement
+- Engineer mode access: Factory Settings → USB Info → USB → "Engineering Mode"
+- Built-in Car DVR System - connect USB Camera to use Car Record function
+- USB cameras detected as /dev/video1 and /dev/video2
+- DVR recordings saved to GPS card automatically
+- Some units require Welink option in Factory Settings to activate USB ports
+- USB mode can be configured in Developer Options
 **Sources**:
 - [Android headunit (8227L) - call volume / radio / mic adjustment | XDA Forums](https://xdaforums.com/t/android-headunit-8227l-call-volume-radio-volume-mic-volume-adjustment-help-using-zlink-for-apple-carplay.4549393/)
 - [8227L demo Volume issue | XDA Forums](https://xdaforums.com/t/8227l-demo-volume-issue.4042497/)
@@ -537,8 +575,13 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 - [Tutorial: Custom boot logo on 8227L head units | XDA Forums](https://xdaforums.com/t/tutorial-custom-boot-logo-on-8227l-head-units.4156239/)
 - [How to set a new car logo on JCAC10003 and JCA8229/8227L | XDA Forums](https://xdaforums.com/t/how-to-set-a-new-car-logo-on-jcac10003-and-jca8229-8227l-models.4784722/)
 - [Podofo ALPS 8227L_demo boot logo update | XDA Forums](https://xdaforums.com/t/podofo-alps-8227l_demo-boot-logo-update.4745328/)
+- [How to access Engineering Mode for AC8227L | XDA Forums](https://xdaforums.com/t/how-to-access-engineering-mode-for-ac8227l.4592425/)
+- [How to enable USB port in android stereo 8227l demo | XDA Forums](https://xdaforums.com/t/how-to-enable-usb-port-in-android-stereo-8227l-demo.3949112/)
+- [8227L YT9216BJ Head Unit | XDA Forums](https://xdaforums.com/t/8227l-yt9216bj-head-unit.4139307/)
+- [USB camera as DVR | XDA Forums](https://xdaforums.com/t/usb-camera-as-dvr.3618705/)
+- [Help with USB Dashcamera | XDA Forums](https://xdaforums.com/t/help-with-usb-dashcamera.3609346/)
 
-**Notes**: Menu 701 provides comprehensive audio and boot logo configuration despite being named "USB Settings". Contains master volume controls for all audio streams, full EQ/sound processing settings, and custom boot logo upload interface. GS = GPS/navigation guidance. BackCar audio preserved during silence mode for safety. Assistant/Alternate volumes control voice assistant and alternate audio stream levels. Bass/Alto/Treble provide 3-band EQ. Balance controls L/R speaker distribution. Loudness compensation boosts low frequencies at low volumes. Boot logo customization allows branding/personalization using BMP/PNG images via USB drive or internal storage. Related to menu 108 (Power Amplifier Settings) for overall gain control. PIN code 5678 provides direct access to boot logo window. Other sidebar contains additional configuration options.
+**Notes**: Menu 701 provides comprehensive audio, boot logo, and USB/DVR configuration despite being named "USB Settings". Contains master volume controls for all audio streams, full EQ/sound processing settings, custom boot logo upload interface, and USB port protocol configuration. GS = GPS/navigation guidance. BackCar audio preserved during silence mode for safety. Assistant/Alternate volumes control voice assistant and alternate audio stream levels. Bass/Alto/Treble provide 3-band EQ. Balance controls L/R speaker distribution. Loudness compensation boosts low frequencies at low volumes. Boot logo customization allows branding/personalization using BMP/PNG images via USB drive or internal storage. USB configuration controls protocol versions (USB 2.0) for both ports and device/host/OTG mode selection. DVR Enhancement enables built-in dashcam recording functionality using USB cameras connected to USB0/USB1 ports - recordings automatically saved to GPS card/storage. Engineer mode provides access to advanced phone/connectivity/audio diagnostics. Related to menu 108 (Power Amplifier Settings) for overall gain control. PIN code 5678 provides direct access to boot logo window. Menu 701 is the most comprehensive settings interface with three major sidebars (Audio/Logo/Other).
 
 ### 702 - Clear Test File
 **Status**: Undocumented
