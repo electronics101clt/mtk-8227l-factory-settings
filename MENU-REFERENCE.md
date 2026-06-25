@@ -310,10 +310,42 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **Notes**: Configures hardware detection method for rotary volume encoder. I/O detect = standard quadrature encoder (most common). AD detect = analog detection using resistor network. Positive/negative direction determines if clockwise rotation increases or decreases volume. Swap function allows reversing encoder assignments. Common issues require seller-specific key.ini file or firmware update to fix encoder recognition after system crash.
 
 ### 308 - Physical Buttons Study
-**Status**: Documented
-**Purpose**: Physical button learning/mapping
-**Related**: Mentioned in XDA forums as accessible via 8888 code
-**Notes**: Learn and map physical buttons to functions
+**Status**: ✅ Documented
+**Purpose**: Learn and map physical buttons to head unit functions
+**Interface**: Grid layout with button function assignments and "Key AD value" header
+**Button Functions Available**:
+- **Row 1**: power, voladd, voldec, prev
+- **Row 2**: next, play/pause, mute, aps
+- **Row 3**: menu, mode, back, radio
+- **Row 4**: music(Optional), navi, hangup, phone
+- **Row 5**: screen on/off→, blooth→, seek+→, seek-→
+- **Row 6**: Lights, FM→, AM→, multiplexing→
+- **Row 7**: start, key in and out, other, clear
+**Controls**:
+- **start**: Begin button learning/mapping process
+- **key in and out**: Import/export button configurations
+- **other**: Other/custom button functions
+- **clear**: Clear/reset button mappings
+**Learning Process**:
+1. Click "start" to begin
+2. Select button name on screen (e.g., home, power, voladd, voldec)
+3. Press corresponding physical button on unit
+4. Shows X/Y coordinates or AD (analog-digital) value for button
+5. Must complete all buttons in one session
+6. Save configuration when done
+**XDA References**:
+- Access via Car Settings → Factory Settings → password 8888 → Physical button study
+- Alternative access: password 1234 or 000000 on some units
+- "Knob panel button learning" feature works even for units with buttons (not knobs)
+- Allows short press and long press actions for same button (up to 8 functions vs 4)
+- Process: Delete current key → hold map key → press physical button simultaneously
+- Software "studies" by selecting function on screen, then pressing physical button
+- Some units write-protected by seller (cannot remap)
+- Common issue: After logo change, side buttons stop working, remapping has no effect
+- Some variants (Avison N8) have touch study only, no button study
+- Config file may show "config file not found" error on some units
+**Key AD value**: Shows analog-digital voltage value for resistive button detection
+**Notes**: Critical for configuring panel buttons after firmware changes or when buttons stop working. Button assignments use AD (analog-digital) values from resistor network. Supports both momentary functions and toggle functions. Arrow symbols (→) indicate additional/advanced functions. Some units may be locked by manufacturer preventing remapping.
 
 ### 309 - Tire Pressure Settings
 **Status**: Undocumented
