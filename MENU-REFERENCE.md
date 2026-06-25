@@ -486,6 +486,42 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 
 ---
 
+## Additional Factory Settings Interfaces
+
+### Audio - Volume Settings
+**Status**: ✅ Documented
+**Access**: Factory settings sidebar → Audio icon (purple speaker)
+**Purpose**: Master volume configuration for all audio channels/streams
+**Interface**: Volume slider screen with 6 independent audio channel controls
+**Header Text**: "Silence all the sounds except Alarm, BackCar and BT Phone"
+**Volume Channels**:
+- **Media**: Media playback volume (music, video apps) - Default: 30
+- **GS**: GPS/Navigation voice guidance volume - Default: 30
+- **BackCar**: Backup camera audio/beep volume - Default: 30
+- **Ring**: Ringtone volume (incoming calls, notifications) - Default: 30
+- **Call**: Phone call volume (in-call audio) - Default: 30
+- **Auxin**: Auxiliary input volume (external audio sources) - Default: 30
+**Range**: 0-30 for all channels
+**Sidebar Navigation**:
+- **Audio** (purple speaker icon) - Current screen: Volume settings
+- **Logo** (green icon) - Boot logo/splash screen settings
+- **Other** (camera icon) - Additional settings
+**XDA References**:
+- Factory settings accessed via PIN code 8888 (advanced settings)
+- VOLUME section in factory menu controls all audio levels
+- Related to "BOOT MEMORY VOLUME RANGE" option (set startup volume range)
+- Power amplifier settings can be adjusted to half in factory settings to address volume issues
+- Users report volume auto-setting to 15 on boot (requires boot memory volume adjustment)
+- Volume knob issues after crash require factory settings reconfiguration
+**Sources**:
+- [Android headunit (8227L) - call volume / radio / mic adjustment | XDA Forums](https://xdaforums.com/t/android-headunit-8227l-call-volume-radio-volume-mic-volume-adjustment-help-using-zlink-for-apple-carplay.4549393/)
+- [8227L demo Volume issue | XDA Forums](https://xdaforums.com/t/8227l-demo-volume-issue.4042497/)
+- [8227L Aux input volume control | XDA Forums](https://xdaforums.com/t/8227l-aux-input-volume-control-sat-nav-audio-interuption-and-ram-share.4193819/)
+- [ALPS FF5000 & other headunits (8227L) pin codes | XDA Forums](https://xdaforums.com/t/alps-ff5000-other-headunits-8227l-pin-codes-for-factory-menus.4269431/)
+**Notes**: Master volume control for all audio streams. GS = GPS/navigation guidance. BackCar preserved even during silence mode for safety (backup camera audio critical). BT Phone = Bluetooth phone calls (also preserved during silence). All channels default to 30 (maximum). Independent control allows fine-tuning audio balance between different sources. Related to menu 108 (Power Amplifier Settings) for overall gain control.
+
+---
+
 ## Legend
 
 **Status Categories:**
