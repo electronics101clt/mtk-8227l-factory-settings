@@ -48,9 +48,23 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **Notes**: Restarts the Android system
 
 ### 105 - Camera And Protocol Parameter Settings
-**Status**: Undocumented
-**Purpose**: Backup/front camera and protocol parameter configuration
-**Notes**:
+**Status**: ✅ Documented
+**Purpose**: Comprehensive backup/reverse camera and 360 camera configuration
+**Interface**: Reversing Settings submenu with 8 options
+**Options**:
+- **Reverse track settings**: Parking trajectory line configuration
+- **Reverse radar settings**: Parking sensor/radar overlay configuration
+- **Reverse image Settings**: Camera image adjustments (flip, mirror, brightness)
+- **Reverse color Settings**: Color calibration for backup camera
+- **Reverse trajectory direction settings**: Trajectory line angle/direction calibration
+- **Door information settings**: Door status integration with camera display
+- **Agreement party accused of settings**: (Translation unclear - likely protocol agreement settings)
+- **360 Camera**: 360-degree camera system configuration
+**XDA References**:
+- Factory settings access via password 8888
+- TCON/video settings must be configured for third-party video
+- Common issues: "NO SIGNAL" errors, camera loops
+**Notes**: Comprehensive camera system configuration including trajectory overlays, radar integration, and multi-camera setups. Critical for proper backup camera functionality.
 
 ### 106 - Help and Feedback
 **Status**: Undocumented
