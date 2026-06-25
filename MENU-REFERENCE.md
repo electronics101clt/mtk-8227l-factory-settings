@@ -445,9 +445,59 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 ## Engineering Settings (700 Series)
 
 ### 701 - USB Settings
-**Status**: Undocumented
-**Purpose**: USB port configuration
-**Notes**: May control USB modes (host/device/OTG)
+**Status**: ✅ Documented
+**Purpose**: Audio configuration and USB-related settings interface
+**Interface**: Multi-page settings menu with sidebar navigation (Audio/Logo/Other)
+**Access**: Engineering Settings (700 series) → 701
+
+#### Audio Sidebar - Volume Page
+**Interface**: Volume slider screen with 6 independent audio channel controls
+**Header Text**: "Silence all the sounds except Alarm, BackCar and BT Phone"
+**Volume Channels**:
+- **Media**: Media playback volume (music, video apps) - Default: 30
+- **GS**: GPS/Navigation voice guidance volume - Default: 30
+- **BackCar**: Backup camera audio/beep volume - Default: 30
+- **Ring**: Ringtone volume (incoming calls, notifications) - Default: 30
+- **Call**: Phone call volume (in-call audio) - Default: 30
+- **Auxin**: Auxiliary input volume (external audio sources) - Default: 30
+**Range**: 0-30 for all channels
+
+#### Audio Sidebar - Sound Effect Page
+**Interface**: EQ and audio processing controls with sliders and buttons
+**Settings**:
+- **Assistant**: Voice assistant volume/processing - Default: 30 (range 0-30)
+- **Alternate**: Alternate audio stream volume - Default: 30 (range 0-30)
+- **Bass**: Low frequency EQ control (button/slider)
+- **Alto**: Mid-range/midrange frequency EQ control (button/slider)
+- **Treble**: High frequency EQ control (button/slider)
+- **Balance**: Left/right speaker balance (button/slider)
+- **Loudness**: Loudness compensation enable/disable (button)
+
+**Sidebar Navigation Icons**:
+- **Audio** (purple speaker icon) - Volume settings + Sound Effect pages
+- **Logo** (green icon) - Boot logo/splash screen configuration
+- **Other** (camera icon) - Additional settings and options
+
+**XDA References**:
+- Factory settings accessed via PIN code 8888 (advanced settings)
+- Code 8877 provides access to atc_factory menu → Audio → Sound Effect → Bass/Alto/Treble
+- VOLUME section in factory menu controls all audio levels
+- Some Music apps allow tone adjustments (bass/treble) but not balance/fader
+- Balance only changeable in Car settings (no fader option for front/rear speakers)
+- "BOOT MEMORY VOLUME RANGE" option available (set startup volume range)
+- Power amplifier settings adjustable to half in factory settings
+- Loudness can be completely disabled in sound effect settings
+**Sources**:
+- [Android headunit (8227L) - call volume / radio / mic adjustment | XDA Forums](https://xdaforums.com/t/android-headunit-8227l-call-volume-radio-volume-mic-volume-adjustment-help-using-zlink-for-apple-carplay.4549393/)
+- [8227L demo Volume issue | XDA Forums](https://xdaforums.com/t/8227l-demo-volume-issue.4042497/)
+- [8227L Aux input volume control | XDA Forums](https://xdaforums.com/t/8227l-aux-input-volume-control-sat-nav-audio-interuption-and-ram-share.4193819/)
+- [ALPS FF5000 & other headunits (8227L) pin codes | XDA Forums](https://xdaforums.com/t/alps-ff5000-other-headunits-8227l-pin-codes-for-factory-menus.4269431/)
+- [Junsun V1 - Codes | XDA Forums](https://xdaforums.com/t/junsun-v1-codes.4282299/page-3)
+- [Collection of 8227l firmware | XDA Forums](https://xdaforums.com/t/collection-of-8227l-firmware-android-vers-6-9.4003935/page-51)
+- [AIPS 8227L Demo Audio setting problems | XDA Forums](https://xdaforums.com/t/aips-8227l-demo-audio-setting-problems.4062005/)
+- [Sound parameters - 8227L demo | XDA Forums](https://xdaforums.com/t/sound-parameters-8227l-demo-generic-hu-jac_829c1_ver_0-6-tag-961al-cp-2-64gb-asp_ahd_lvds-maybe-others-as-well.4686367/)
+
+**Notes**: Menu 701 provides comprehensive audio configuration despite being named "USB Settings". Contains master volume controls for all audio streams and full EQ/sound processing settings. GS = GPS/navigation guidance. BackCar audio preserved during silence mode for safety. Assistant/Alternate volumes control voice assistant and alternate audio stream levels. Bass/Alto/Treble provide 3-band EQ. Balance controls L/R speaker distribution. Loudness compensation boosts low frequencies at low volumes. Related to menu 108 (Power Amplifier Settings) for overall gain control. Logo sidebar accesses boot animation settings. Other sidebar contains additional configuration options.
 
 ### 702 - Clear Test File
 **Status**: Undocumented
@@ -483,42 +533,6 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **Status**: Undocumented
 **Purpose**: General engineering diagnostics
 **Notes**: Comprehensive system testing interface
-
----
-
-## Additional Factory Settings Interfaces
-
-### Audio - Volume Settings
-**Status**: ✅ Documented
-**Access**: Factory settings sidebar → Audio icon (purple speaker)
-**Purpose**: Master volume configuration for all audio channels/streams
-**Interface**: Volume slider screen with 6 independent audio channel controls
-**Header Text**: "Silence all the sounds except Alarm, BackCar and BT Phone"
-**Volume Channels**:
-- **Media**: Media playback volume (music, video apps) - Default: 30
-- **GS**: GPS/Navigation voice guidance volume - Default: 30
-- **BackCar**: Backup camera audio/beep volume - Default: 30
-- **Ring**: Ringtone volume (incoming calls, notifications) - Default: 30
-- **Call**: Phone call volume (in-call audio) - Default: 30
-- **Auxin**: Auxiliary input volume (external audio sources) - Default: 30
-**Range**: 0-30 for all channels
-**Sidebar Navigation**:
-- **Audio** (purple speaker icon) - Current screen: Volume settings
-- **Logo** (green icon) - Boot logo/splash screen settings
-- **Other** (camera icon) - Additional settings
-**XDA References**:
-- Factory settings accessed via PIN code 8888 (advanced settings)
-- VOLUME section in factory menu controls all audio levels
-- Related to "BOOT MEMORY VOLUME RANGE" option (set startup volume range)
-- Power amplifier settings can be adjusted to half in factory settings to address volume issues
-- Users report volume auto-setting to 15 on boot (requires boot memory volume adjustment)
-- Volume knob issues after crash require factory settings reconfiguration
-**Sources**:
-- [Android headunit (8227L) - call volume / radio / mic adjustment | XDA Forums](https://xdaforums.com/t/android-headunit-8227l-call-volume-radio-volume-mic-volume-adjustment-help-using-zlink-for-apple-carplay.4549393/)
-- [8227L demo Volume issue | XDA Forums](https://xdaforums.com/t/8227l-demo-volume-issue.4042497/)
-- [8227L Aux input volume control | XDA Forums](https://xdaforums.com/t/8227l-aux-input-volume-control-sat-nav-audio-interuption-and-ram-share.4193819/)
-- [ALPS FF5000 & other headunits (8227L) pin codes | XDA Forums](https://xdaforums.com/t/alps-ff5000-other-headunits-8227l-pin-codes-for-factory-menus.4269431/)
-**Notes**: Master volume control for all audio streams. GS = GPS/navigation guidance. BackCar preserved even during silence mode for safety (backup camera audio critical). BT Phone = Bluetooth phone calls (also preserved during silence). All channels default to 30 (maximum). Independent control allows fine-tuning audio balance between different sources. Related to menu 108 (Power Amplifier Settings) for overall gain control.
 
 ---
 
