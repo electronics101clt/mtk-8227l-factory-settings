@@ -49,8 +49,8 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 
 ### 105 - Camera And Protocol Parameter Settings
 **Status**: ✅ Documented
-**Purpose**: Comprehensive backup/reverse camera and 360 camera configuration
-**Interface**: Reversing Settings submenu with 17+ options
+**Purpose**: Comprehensive backup/reverse camera, 360 camera, and vehicle integration configuration
+**Interface**: Reversing Settings submenu with 26+ scrollable options
 **Options**:
 - **Reverse track settings**: Parking trajectory line configuration
 - **Reverse radar settings**: Parking sensor/radar overlay configuration
@@ -69,13 +69,23 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 - **Reverse video resolution settings**: Camera resolution selection
 - **Software astern**: Software-based reverse detection (vs hardware trigger)
 - **SYNC switch**: Synchronization settings for multi-camera systems
+- **UI settings**: User interface configuration for camera views
+- **Outside input and right view resolution settings**: External camera input and resolution
+- **Front view switching time**: Delay before switching to front camera view
+- **Agreement model alarm box**: Alarm/notification settings for camera events
+- **Air conditioner floating key switch**: AC control overlay display (requires restart)
+- **Temperature unit**: Celsius/Fahrenheit selection for temperature display
+- **Bagu protocol box controls the original car function switch**: Factory vehicle function integration via CANBUS
+- **Door state switch**: Door open/close status monitoring and display
 **XDA References**:
 - Factory settings access via password 8888
 - TCON/video settings must be configured for third-party video
 - Common issues: "NO SIGNAL" errors, camera loops
 - Parking radar sensors may not produce beep sounds (configuration issue)
 - Assistant lines sometimes built into camera (cannot disable in software)
-**Notes**: Comprehensive camera system configuration including trajectory overlays, radar integration, and multi-camera setups. Critical for proper backup camera functionality. Menu contains 17+ scrollable options.
+- AC display and vehicle integration via CANBUS box if equipped
+- Auto speed volume and dimming connected to CANBUS device
+**Notes**: Comprehensive camera system configuration including trajectory overlays, radar integration, multi-camera setups, AND vehicle integration features (AC, temperature, door status). Requires CANBUS adapter for vehicle data integration. Menu contains 26+ scrollable options.
 
 ### 106 - Help and Feedback
 **Status**: Undocumented
