@@ -781,9 +781,50 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **Notes**: Simple fullscreen touch test for verifying screen responsiveness. Drag finger across entire screen to identify dead zones or unresponsive areas. Minimal interface - just touch the screen and observe response. Use menu 703 (Debug Touch) for detailed coordinate debugging. Use menu 303 (Touch Settings) for calibration if issues found.
 
 ### 706 - Bluetooth Connect Pair Set
-**Status**: Undocumented
-**Purpose**: Bluetooth pairing configuration
-**Notes**: Advanced BT pairing settings
+**Status**: ✅ Documented
+**Purpose**: Configure Bluetooth pairing security mode
+**Interface**: Radio button selection with restart warning
+**Warning**: "After saving, restart the machine!" (red text)
+**Pairing Modes**:
+- **Auto Pair** (selected by default)
+  - Bluetooth SSP "Just Works" mode
+  - No PIN/password required for pairing
+  - Automatic pairing without user confirmation
+  - Phone connects to head unit automatically when in range
+  - Convenient for quick connections
+  - Security: Less secure - vulnerable to MITM attacks
+  - Uses AES-128 encryption but no PIN verification
+- **Password Pair**
+  - Traditional PIN/password-based pairing
+  - Requires PIN code entry during pairing (default: 0000)
+  - User must confirm pairing on both devices
+  - More secure against man-in-the-middle attacks
+  - Standard Bluetooth pairing behavior
+**Controls**:
+- **Radio buttons**: Select Auto Pair or Password Pair mode
+- **OK button**: Save selection and return to menu
+**Pairing Behavior**:
+- **Auto Pair**: Head unit accepts connections without prompting
+- **Password Pair**: Head unit requests PIN during pairing process
+- Settings take effect after system restart
+- Pairing typically works one direction: search for head unit from phone
+**Related Settings**:
+- Bluetooth name configured in menu 304 (Export The Config) - default "CarBT"
+- Bluetooth password configured in menu 304 - default "0000"
+**XDA References**:
+- Factory settings accessed via PIN code 8888 (or 000000 on some units)
+- Default Bluetooth PIN is 0000
+- Some users unable to find "BT pairing mode" option to change PIN
+- Pairing works only one direction: add head unit from phone, not vice versa
+- Chinese developers wrote custom Bluetooth implementation (standard Android rules don't apply)
+- Some units missing standard Bluetooth features due to custom firmware
+**Sources**:
+- [Any way to change the Bluetooth pairing code? | XDA Forums](https://xdaforums.com/t/any-way-to-change-the-bluetooth-pairing-code.3972241/)
+- [General questions about FF-5000 8227L demo | Page 2 | XDA Forums](https://xdaforums.com/t/general-questions-about-ff-5000-8227l-demo.4320569/page-2)
+- [8227L android unit 8.1 chinese | XDA Forums](https://xdaforums.com/t/8227l-android-unit-8-1-chinese.3905535/)
+- [can someone help me - BT pairing mode | XDA Forums](https://xdaforums.com/t/can-someone-help-me-i-tried-the-factory-setting-but-it-didnt-show-the-bt-pairing-mode.4705177/)
+- [How to Automate Android Bluetooth Pairing Without PIN | w3tutorials.net](https://www.w3tutorials.net/blog/android-bluetooth-pairing-without-the-user-enter-a-pin-code-and-confirmation-using-the-android-api/)
+**Notes**: Controls Bluetooth pairing security mode. Auto Pair uses Bluetooth SSP "Just Works" mode for convenience - phone connects automatically without PIN entry or user confirmation. Password Pair uses traditional PIN-based security - requires entering PIN code (default 0000) during pairing. Auto Pair is more convenient but less secure (vulnerable to MITM attacks). Password Pair is more secure but requires manual PIN entry each time a new device pairs. Settings require system restart to take effect. 8227L units use custom Bluetooth implementation, so standard Android pairing behavior may differ. Bluetooth name/password configured separately in menu 304.
 
 ### 707 - MCU Info Test
 **Status**: Undocumented
