@@ -196,10 +196,33 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **Notes**: Critical for proper touchscreen calibration and touch button mapping. "nokey" indicates unassigned/empty touch areas. X/Y axis swap fixes reversed/mirrored touch coordinates. GtpAdbTool provides advanced calibration using /proc config data. Factory reset may require recalibration.
 
 ### 304 - Export The Config
-**Status**: Partially Documented
-**Purpose**: Backup/export settings
-**Related**: PIN code 5555 exports advanced settings to SD/USB
-**Notes**: Configuration backup functionality
+**Status**: ✅ Documented
+**Purpose**: Export/backup system configuration to USB drive
+**Interface**: Export data settings screen with adjustable parameters
+**Settings Shown Before Export**:
+- **Media Volume**: Default 30 (adjustable with +/- buttons)
+- **Call Volume**: Default 30 (adjustable with +/- buttons)
+- **Language**: English (selectable with arrows)
+- **Bluetooth Name**: CarBT (editable)
+- **Bluetooth pwd**: 0000 (editable)
+**Output File**: Creates **metazone.bin** on USB drive (1MB file)
+**File Contents**: Motherboard-specific settings including:
+- Button mappings
+- Touch panel configuration
+- Screen configuration
+- Volume levels
+- Language settings
+- Bluetooth configuration
+**Requirements**: USB drive must be inserted (message shows "Not inserted U disk" if missing)
+**XDA References**:
+- Creates metazone.bin file on USB drive (1MB)
+- Contains motherboard-specific settings (button, touch, screen configs)
+- Used for backup/restore when flashing firmware
+- Recommended to backup and flash your own metazone.bin with different firmware
+- Related to PIN code 5555 for advanced settings export
+- File can be checked with hex editor but may appear mostly empty
+- Used in USB firmware flashing process along with 8227L-8.upd, logo.bin, preloader.bin
+**Notes**: Critical for preserving custom configurations when updating firmware. metazone.bin contains device-specific calibration and settings. Always backup before flashing new firmware. File placed in root of USB drive.
 
 ### 305 - Direction Control Settings
 **Status**: Undocumented
