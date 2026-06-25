@@ -133,10 +133,22 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 ## Factory Settings (300 Series)
 
 ### 301 - Color Settings
-**Status**: Partially Documented
-**Purpose**: Display color calibration
-**Related**: PIN code 1616 provides access to brightness, contrast, hue, saturation controls
-**Notes**: Factory display calibration tool
+**Status**: ✅ Documented
+**Purpose**: Adjust display screen properties (brightness, contrast, color, saturation)
+**Interface**: Settings screen with Asian woman reference image
+**Features**:
+- Asian woman backdrop as visual reference while adjusting screen
+- Display text: "Close the car small light" = turn off dome light (interior cabin light) so screen can be seen clearly
+- Multiple "Time" labels (display timing controls)
+- Screen adjustment controls for display properties
+**Related**: PIN code 1616 provides access to brightness, contrast, hue, saturation, tone controls
+**File**: Related to `/storage/emulated/0/calibration.ini`
+**XDA References**:
+- PIN 1616 for brightness/contrast/hue/saturation/tone controls
+- calibration.ini file stores display settings
+- "Small light" = dome light (interior cabin light)
+- Dome light interferes with viewing screen adjustments
+**Notes**: Factory display adjustment tool. Asian woman image provides visual reference for adjusting screen properties. Users must turn off dome light (interior cabin light) so they can see the screen clearly while making adjustments.
 
 ### 302 - Production Management
 **Status**: Undocumented

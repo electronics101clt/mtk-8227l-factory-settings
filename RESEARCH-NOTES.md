@@ -166,31 +166,36 @@ User reported navigation bar moved from top (integrated with status bar) to bott
 
 ---
 
-### Unknown Screen: "Close the car small light"
+### Menu 301 - Color Settings: "Close the car small light"
 
 **Discovered**: 2026-06-25
-**Access**: Unknown - appeared during menu navigation
+**Access**: Menu 301 - Color Settings (Factory Settings 300 series)
 
 **Interface**:
-- Background image showing person/face
-- Text: "Close the car small light"
+- Background image: Asian woman
+- Text: "Close the car small light" (part of color/display calibration)
 - Multiple "Time" labels visible
-- Glitched/corrupted appearance
+- Display calibration interface
 
-**Purpose**: Unknown
-- Possibly vehicle lighting control screen
-- Could be camera test screen
-- May be corrupted display/overlay issue
-- Not a standard numbered menu item
+**Purpose**: ✅ IDENTIFIED - Display screen adjustment settings
+- Menu 301 - Color Settings
+- Asian woman backdrop used as visual reference while adjusting screen
+- "Small light" = dome light (interior cabin light)
+- User must turn off dome light so screen can be seen clearly during adjustments
+- Part of factory display settings system
 
-**XDA Research**:
-- No specific documentation found for this screen
-- Factory settings include camera and icon deactivation options
-- Menu icons can be managed in factory settings
-- Camera display issues documented (loops, NO SIGNAL errors)
+**XDA Research - Color Settings & Display Adjustment**:
+- Accessed via factory settings (code 8888) → menu 301
+- PIN code 1616 provides access to: brightness, contrast, hue, saturation, tone controls
+- Related to file: `/storage/emulated/0/calibration.ini` (mentioned in XDA threads)
+- Factory display adjustment tool
+- Asian woman backdrop used as reference image while adjusting display properties
+- "Close the car small light" = turn off dome light (interior cabin light) so screen visible during adjustments
+- Multiple "Time" labels = timing controls for display adjustments
+- Dome light interferes with viewing screen when making adjustments
 
 **Sources**:
+- [ALPS FF5000 & other headunits (8227L) pin codes for factory menus | XDA Forums](https://xdaforums.com/t/alps-ff5000-other-headunits-8227l-pin-codes-for-factory-menus.4269431/)
 - [8227L android unit 8.1 chinese | XDA Forums](https://xdaforums.com/t/8227l-android-unit-8-1-chinese.3905535/)
-- [8227L Demo issues - rear view camera | XDA Forums](https://xdaforums.com/t/8227l-demo-issues-rear-view-camera.4070573/)
 
-**Notes**: Anomalous screen encountered during menu exploration. Not part of numbered menu structure (100/300/700 series). May be test screen, lighting control, or display artifact. Requires further investigation.
+**Notes**: Menu 301 - Color Settings. Factory display adjustment interface with Asian woman reference image. "Small light" is dome light (interior cabin light) which must be turned off so user can see screen clearly while adjusting brightness/contrast/color/saturation. PIN 1616 provides direct access to display adjustment controls.
