@@ -93,9 +93,21 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **Notes**:
 
 ### 107 - Protocol Debugging
-**Status**: Undocumented
-**Purpose**: Debug communication protocols
-**Notes**: Likely for CAN bus diagnostics
+**Status**: ✅ Documented
+**Purpose**: Real-time CANBUS protocol debugging and log monitoring
+**Interface**: Program log display with control buttons
+**Options**:
+- **protocol...**: Protocol selection/configuration button
+- **print data**: Output log data to screen/file
+- **time cha...**: Time-related controls (timestamp display)
+- **clear log**: Clear the debug log display
+**Display**: Black log area showing real-time protocol communications
+**XDA References**:
+- CANBUS debugger shows when steering wheel controls are pressed
+- Detects if RAISE canbus box decoder is connected
+- Used for diagnosing protocol communication issues
+- Engineering Mode accessible via Factory Settings → USB Info → USB
+**Notes**: Critical tool for debugging CANBUS communication, steering wheel controls, and vehicle integration. Shows real-time protocol data stream for troubleshooting.
 
 ### 108 - Power Amplifier Settings
 **Status**: Undocumented
