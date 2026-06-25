@@ -473,6 +473,37 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 - **Balance**: Left/right speaker balance (button/slider)
 - **Loudness**: Loudness compensation enable/disable (button)
 
+#### Logo Sidebar - Boot Logo Configuration
+**Interface**: Boot logo/splash screen customization interface
+**Buttons**:
+- **Set path**: Select folder containing boot logo image (USB or internal storage)
+- **Set logo**: Apply selected boot logo image to device
+**Alternative Access**: PIN code 5678 opens custom boot logo window (com.ts.logoset.LogoSetMainActivity)
+**Image Requirements**:
+- **Format**: BMP (primary) or PNG (some units)
+- **Resolution**: 1024x600 (for 7" 8227L units) - must match screen resolution
+- **Location**: USB drive root → Car_Logo folder, or internal storage
+- **Filename**: Some units require "android_" prefix (e.g., android_opel.png)
+**Procedure**:
+1. Create "Car_Logo" folder in USB drive root directory (FAT32 formatted)
+2. Place boot logo BMP/PNG file (1024x600) in Car_Logo folder
+3. Insert USB drive into head unit
+4. Click "Set path" → select Car_Logo folder → select logo image
+5. Click "Set logo" → message "Boot logo set successful" appears
+6. Go to factory settings (code 8888) and reboot device
+7. New boot logo displays on next startup
+**Common Issues**:
+- **Path loop**: Unit repeatedly asks to select path after clicking "Set logo"
+  - Solution: Try BMP format instead of PNG, or use "android_" filename prefix
+- **No boot animation**: Bootlogo selector app data corrupted
+  - Solution: Android settings → Apps → "bootlogo selector apk" → Clear data
+- **Logo doesn't appear**: Image appears under "EXT" in factory settings but not at boot
+  - Solution: Ensure proper resolution (1024x600) and BMP format
+**Alternative Method** (some models):
+- Create folders: AutoUpdate/config on FAT32 USB drive
+- Place logo image named "default_logo.bmp" or "default_logo.png"
+- Insert USB and reboot from factory settings
+
 **Sidebar Navigation Icons**:
 - **Audio** (purple speaker icon) - Volume settings + Sound Effect pages
 - **Logo** (green icon) - Boot logo/splash screen configuration
@@ -481,12 +512,18 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **XDA References**:
 - Factory settings accessed via PIN code 8888 (advanced settings)
 - Code 8877 provides access to atc_factory menu → Audio → Sound Effect → Bass/Alto/Treble
+- Code 5678 opens custom boot logo window (com.ts.logoset.LogoSetMainActivity)
 - VOLUME section in factory menu controls all audio levels
 - Some Music apps allow tone adjustments (bass/treble) but not balance/fader
 - Balance only changeable in Car settings (no fader option for front/rear speakers)
 - "BOOT MEMORY VOLUME RANGE" option available (set startup volume range)
 - Power amplifier settings adjustable to half in factory settings
 - Loudness can be completely disabled in sound effect settings
+- Boot logo must be BMP format, 1024x600 resolution for 8227L_demo units
+- Car_Logo folder method: Create folder on USB root, place PNG/BMP with "android_" prefix
+- After setting boot logo, reboot from factory settings (code 8888) to apply
+- Bootlogo selector app data must be cleared if boot animation doesn't appear
+- Some newer variants (Android 13) may not support boot logo replacement
 **Sources**:
 - [Android headunit (8227L) - call volume / radio / mic adjustment | XDA Forums](https://xdaforums.com/t/android-headunit-8227l-call-volume-radio-volume-mic-volume-adjustment-help-using-zlink-for-apple-carplay.4549393/)
 - [8227L demo Volume issue | XDA Forums](https://xdaforums.com/t/8227l-demo-volume-issue.4042497/)
@@ -496,8 +533,12 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 - [Collection of 8227l firmware | XDA Forums](https://xdaforums.com/t/collection-of-8227l-firmware-android-vers-6-9.4003935/page-51)
 - [AIPS 8227L Demo Audio setting problems | XDA Forums](https://xdaforums.com/t/aips-8227l-demo-audio-setting-problems.4062005/)
 - [Sound parameters - 8227L demo | XDA Forums](https://xdaforums.com/t/sound-parameters-8227l-demo-generic-hu-jac_829c1_ver_0-6-tag-961al-cp-2-64gb-asp_ahd_lvds-maybe-others-as-well.4686367/)
+- [8227L demo upload custom boot logo | XDA Forums](https://xdaforums.com/t/8227l-demo-upload-custom-boot-logo.4013155/)
+- [Tutorial: Custom boot logo on 8227L head units | XDA Forums](https://xdaforums.com/t/tutorial-custom-boot-logo-on-8227l-head-units.4156239/)
+- [How to set a new car logo on JCAC10003 and JCA8229/8227L | XDA Forums](https://xdaforums.com/t/how-to-set-a-new-car-logo-on-jcac10003-and-jca8229-8227l-models.4784722/)
+- [Podofo ALPS 8227L_demo boot logo update | XDA Forums](https://xdaforums.com/t/podofo-alps-8227l_demo-boot-logo-update.4745328/)
 
-**Notes**: Menu 701 provides comprehensive audio configuration despite being named "USB Settings". Contains master volume controls for all audio streams and full EQ/sound processing settings. GS = GPS/navigation guidance. BackCar audio preserved during silence mode for safety. Assistant/Alternate volumes control voice assistant and alternate audio stream levels. Bass/Alto/Treble provide 3-band EQ. Balance controls L/R speaker distribution. Loudness compensation boosts low frequencies at low volumes. Related to menu 108 (Power Amplifier Settings) for overall gain control. Logo sidebar accesses boot animation settings. Other sidebar contains additional configuration options.
+**Notes**: Menu 701 provides comprehensive audio and boot logo configuration despite being named "USB Settings". Contains master volume controls for all audio streams, full EQ/sound processing settings, and custom boot logo upload interface. GS = GPS/navigation guidance. BackCar audio preserved during silence mode for safety. Assistant/Alternate volumes control voice assistant and alternate audio stream levels. Bass/Alto/Treble provide 3-band EQ. Balance controls L/R speaker distribution. Loudness compensation boosts low frequencies at low volumes. Boot logo customization allows branding/personalization using BMP/PNG images via USB drive or internal storage. Related to menu 108 (Power Amplifier Settings) for overall gain control. PIN code 5678 provides direct access to boot logo window. Other sidebar contains additional configuration options.
 
 ### 702 - Clear Test File
 **Status**: Undocumented
