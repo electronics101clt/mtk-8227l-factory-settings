@@ -617,9 +617,60 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **Notes**: Cleanup tool for freeing storage space by removing built-in factory test media files. These test files are used during manufacturing for quality control verification of audio output (speakers/amplifiers) and video output (display/HDMI). Safe to delete on consumer units - files serve no purpose after manufacturing QC is complete. Operation is permanent and cannot be undone. Useful for reclaiming storage space on units with limited internal memory.
 
 ### 703 - Debug Touch
-**Status**: Undocumented
-**Purpose**: Touchscreen debugging interface
-**Notes**: Visual touch input debugging
+**Status**: ✅ Documented
+**Purpose**: Real-time touchscreen debugging and diagnostic tool
+**Interface**: Debug information display with get buttons and enable/disable checkboxes
+**Settings**:
+- **tp_pixel**: Touch panel pixel information
+  - Status: Unknown (until retrieved)
+  - **get button**: Retrieve current touch panel pixel configuration/resolution
+  - Displays: Touch panel dimensions, pixel density, or panel-specific hardware info
+- **key position**: Physical key/button position data
+  - Status: Unknown (until retrieved)
+  - **get button**: Retrieve hardware button position mappings
+  - Displays: X/Y coordinates or hardware identifiers for physical buttons
+- **coordinate**: Touch coordinate display toggle
+  - Status: Close (disabled) / Open (enabled)
+  - **checkbox**: Enable real-time coordinate display on screen
+  - When enabled: Shows X/Y coordinates of touch points as you touch the screen
+- **print coordinate**: Touch coordinate logging toggle
+  - Status: Close (disabled) / Open (enabled)
+  - **checkbox**: Enable coordinate data logging/printing to console or file
+  - When enabled: Logs touch coordinate data for debugging and analysis
+**Display Area**: Gray touch test area (lower portion of screen)
+- Interactive zone for testing touch input
+- Displays real-time touch coordinates when coordinate display enabled
+- Visual feedback area for touch point tracking
+**Use Cases**:
+- Diagnosing touchscreen calibration issues
+- Verifying touch panel pixel resolution and hardware configuration
+- Testing touch accuracy across different screen regions
+- Troubleshooting dead zones or inaccurate touch areas
+- Factory quality control touch panel testing
+- Debugging X/Y coordinate offset problems (e.g., X0-X200 left side accuracy issues)
+**Similar To**: Android Developer Options → Pointer Location
+- Shows crosshairs and trails following touch points
+- Displays X/Y coordinates, pressure, size, dX/dY deltas
+- Real-time touch diagnostics
+**Related Settings**:
+- Menu 303 (Touch Settings): Calibration and X/Y axis swap
+- Menu 705 (Touch Test): Interactive touch testing utility
+- Menu 308 (Physical Buttons Study): Button mapping and learning
+- /storage/emulated/0/calibration.ini: Touch calibration data file
+**XDA References**:
+- Factory settings accessed via PIN code 8888
+- Factory Setting App allows X/Y deltas to be set
+- Common issue: X0-X200 (left side) touch accuracy problems
+- Touchscreen calibration.ini file stored in /storage/emulated/0
+- 5-finger calibration: Place 5 fingers on screen to trigger quick calibration menu
+- Touch Settings contains X/Y axis swap for inverted/mirrored coordinates
+**Sources**:
+- [8227L android unit 8.1 chinese | XDA Forums](https://xdaforums.com/t/8227l-android-unit-8-1-chinese.3905535/)
+- [8227L android unit 8.1 chinese | Page 5 | XDA Forums](https://xdaforums.com/t/8227l-android-unit-8-1-chinese.3905535/page-5)
+- [How to access Engineering Mode for AC8227L | XDA Forums](https://xdaforums.com/t/how-to-access-engineering-mode-for-ac8227l.4592425/)
+- [Pointer location | Developer options | Taming The Droid](https://tamingthedroid.com/pointer-location)
+- [Show touches | Developer options | Taming The Droid](https://tamingthedroid.com/show-touches)
+**Notes**: Real-time touchscreen diagnostic tool for troubleshooting touch accuracy and calibration issues. tp_pixel retrieves touch panel hardware specifications (resolution, pixel configuration). key position retrieves physical button coordinate mappings. coordinate checkbox enables on-screen real-time X/Y coordinate display as you touch the screen. print coordinate enables logging of touch data to console or file for analysis. Gray test area provides visual feedback for touch testing. Essential tool for diagnosing common 8227L touchscreen issues like left-side accuracy problems (X0-X200 range). Similar to Android Developer Options "Pointer Location" feature but integrated into factory settings. Use with menu 303 (Touch Settings) for calibration adjustments and X/Y axis corrections.
 
 ### 704 - App Settings
 **Status**: Undocumented
