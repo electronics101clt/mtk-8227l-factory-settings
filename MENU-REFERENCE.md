@@ -168,10 +168,32 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **Notes**: Restricted access menu for production line workers and quality control personnel. Requires manufacturer-specific account credentials not publicly available. Used during manufacturing for production testing and quality assurance. Not accessible to end users without factory login credentials.
 
 ### 303 - Touch Settings
-**Status**: Partially Documented
-**Purpose**: Touchscreen calibration
-**Related**: Touch calibration tools mentioned in XDA forums
-**Notes**: Used to calibrate touch panel accuracy
+**Status**: ✅ Documented
+**Purpose**: Touchscreen calibration and touch button mapping
+**Interface**: Grid layout with touch test areas and calibration controls
+**Grid Layout**:
+- **Row 1**: power, home, back, voladd (volume up)
+- **Row 2**: voldec (volume down), nokey, nokey, nokey
+- **Row 3**: nokey, nokey, start, clear
+- **Row 4**: Touch screen resolution, config, key position, The X axis Y axis swap
+**Controls**:
+- **start**: Begin touch calibration process
+- **clear**: Reset/clear calibration data
+- **config**: Configure touch button mappings
+- **key position**: Set touch button positions
+- **Touch screen resolution**: Set correct panel resolution
+- **The X axis Y axis swap**: Fix inverted/mirrored touch coordinates
+- **nokey**: No key assigned or no touch detected in area
+**XDA References**:
+- **5-finger calibration**: Put 5 fingers on screen to trigger quick calibration menu (touch 4 spots, select OK)
+- **Physical Buttons Study process**: Click start, then touch each button when prompted (home, power, voladd, voldec), shows X/Y coordinates, click OK
+- **X/Y axis swap**: Fix for inverted/mirrored touchscreen in items.ini firmware file
+- **Calibration file**: `/storage/emulated/0/calibration.ini` stores calibration data
+- **GtpAdbTool**: Advanced Goodix touch panel configuration tool (186-byte config file)
+- **Common issues**: Left side touch (X0-X200) accuracy problems, touch offset increases moving left/down
+- **items.ini**: Firmware file contains touchpanel X/Y axis config (1 or 0 values)
+- **metazone.bin**: Export config creates this file on USB (menu 304)
+**Notes**: Critical for proper touchscreen calibration and touch button mapping. "nokey" indicates unassigned/empty touch areas. X/Y axis swap fixes reversed/mirrored touch coordinates. GtpAdbTool provides advanced calibration using /proc config data. Factory reset may require recalibration.
 
 ### 304 - Export The Config
 **Status**: Partially Documented
