@@ -277,10 +277,37 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **Notes**: Alternative to resistive KEY1/KEY2 steering wheel controls (menu 305). Allows using learnable IR remote controls instead of hardwired resistive controls. "No profile" indicates codes need to be learned via KEY learning mode in settings. NEC is industry-standard IR protocol. Used primarily when vehicle steering wheel controls are not compatible with resistive KEY1/KEY2 interface.
 
 ### 307 - Encoder Settings
-**Status**: Partially Documented
-**Purpose**: Volume knob/rotary encoder configuration
-**Related**: Hardware encoder mapping and calibration
-**Notes**: Configures quadrature encoder inputs for volume knob
+**Status**: ✅ Documented
+**Purpose**: Rotary encoder (volume knob) hardware detection and configuration
+**Interface**: Settings screen with encoder detection method and direction configuration
+**Settings**:
+- **Encoder reading ways**:
+  - **I/0 detect** (selected in screenshot) - Digital I/O quadrature encoder detection
+  - **AD detect 1** - Analog-to-digital detection method 1
+  - **AD detect 2** - Analog-to-digital detection method 2
+  - **AD detect 3** - Analog-to-digital detection method 3
+- **Encoder 1 setting**:
+  - **positive direction** (selected) - Clockwise rotation increases volume
+  - **negative direction** - Clockwise rotation decreases volume (reversed)
+  - **Knob AD1 Off** - Disable encoder 1 analog detection
+- **Encoder 2 setting**:
+  - **positive direction** (selected) - Clockwise rotation increases volume
+  - **negative direction** - Clockwise rotation decreases volume (reversed)
+  - **Knob AD2 Off** - Disable encoder 2 analog detection
+- **Encoder 1 and Encoder 2 Functions Swap**: Checkboxes to swap encoder functions
+  - **Message**: "AD is not input values" (shown when not using AD detection mode)
+**OK Button**: Save configuration
+**Detection Methods**:
+- **I/0 detect**: Digital quadrature encoder (two-channel A/B phase detection)
+- **AD detect 1/2/3**: Analog-to-digital detection using resistor ladder/voltage divider
+**XDA References**:
+- Common issue: After crash/reboot, unit doesn't recognize volume knob ("key study fail")
+- Volume knob requires specific key.ini file from seller
+- Firmware update from seller can fix volume knob recognition issues
+- Different hardware variants use different encoder types (quadrature vs analog)
+- Factory settings (password 8888) allows encoder configuration
+- Units may have firmware for volume knob variant vs touchscreen-only variant
+**Notes**: Configures hardware detection method for rotary volume encoder. I/O detect = standard quadrature encoder (most common). AD detect = analog detection using resistor network. Positive/negative direction determines if clockwise rotation increases or decreases volume. Swap function allows reversing encoder assignments. Common issues require seller-specific key.ini file or firmware update to fix encoder recognition after system crash.
 
 ### 308 - Physical Buttons Study
 **Status**: Documented
