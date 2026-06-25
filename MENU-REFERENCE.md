@@ -827,9 +827,63 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **Notes**: Controls Bluetooth pairing security mode. Auto Pair uses Bluetooth SSP "Just Works" mode for convenience - phone connects automatically without PIN entry or user confirmation. Password Pair uses traditional PIN-based security - requires entering PIN code (default 0000) during pairing. Auto Pair is more convenient but less secure (vulnerable to MITM attacks). Password Pair is more secure but requires manual PIN entry each time a new device pairs. Settings require system restart to take effect. 8227L units use custom Bluetooth implementation, so standard Android pairing behavior may differ. Bluetooth name/password configured separately in menu 304.
 
 ### 707 - MCU Info Test
-**Status**: Undocumented
-**Purpose**: Microcontroller information and testing
-**Notes**: Displays MCU firmware version and diagnostics
+**Status**: ✅ Documented
+**Purpose**: Display MCU (Microcontroller Unit) firmware version and system information
+**Interface**: System information display screen
+**Function**: Shows MCU firmware details and hardware specifications
+**Information Displayed**:
+- **MCU Version**: Firmware version identifier
+  - Common versions: TS907, TS907.190518(H), JCCM20, JCCM20-0-2022.05.19_17:25
+  - Format varies by manufacturer and board type
+- **System Specifications**:
+  - Android version (e.g., XY auto 3.1, 8227L_demo)
+  - MCU revision (e.g., MCU 3.1)
+  - DDR memory size (e.g., 1G, 2G)
+  - Flash storage size (e.g., 16G, 32G)
+  - CPU type and speed (e.g., A7 1.3GHz x 4)
+  - Display resolution
+- **Board Type Identification**:
+  - MCU version starting with MTC (MTCB, MTCC, MTCD, MTCE) identifies board type
+  - Helps identify compatible firmware and hardware configuration
+**MCU Role**:
+- Acts as bridge between vehicle hardware and Android system
+- Manages vehicle-specific integrations (steering wheel controls, CANBUS, sensors)
+- Controls hardware functions not directly accessible to Android
+- Enables special interactions between vehicle and head unit
+**Use Cases**:
+- Verify MCU firmware version before updates
+- Identify board type for firmware compatibility
+- Troubleshoot hardware integration issues
+- Confirm system specifications (RAM, storage, CPU)
+- Determine compatible firmware for updates
+- Validate advertised specifications vs actual hardware
+**Alternative Access Methods**:
+- Settings → About → MCU Version
+- Settings → Information → Tap MCU Version 5 times (reveals detailed info)
+- Settings → System → Update MCU
+**Firmware Update Considerations**:
+- MCU version must match hardware exactly to avoid bricking device
+- Different brands using same chipset require different MCU firmware
+- TS907 common on Junsun MT8227L units
+- JCCM20 common on AC8227L Android 12/13 units
+- Minor firmware differences can cause boot loops or "internal" errors
+**XDA References**:
+- Factory settings accessed via PIN code 8888
+- Engineering mode provides additional MCU diagnostic tools
+- MCU firmware updates available from manufacturers or XDA forums
+- Use "Fake Device Test" app from Play Store to verify specifications
+- XDA threads contain comprehensive MCU firmware collections
+- Accurate MCU version critical for firmware updates to prevent bricking
+**Sources**:
+- [X5PH MCU TS907 AC8227L ALPS Firmware Guide | Annssolutions](https://annssolutions.com/x5ph-mcu-ts907-ac8227l-alps-firmware/)
+- [Need Stable MCU Update for TS907.190518(H) | XDA Forums](https://xdaforums.com/t/need-stable-mcu-update-for-ts907-190518-h-8227l-android-head-unit-bluetooth-button-issues.4750756/)
+- [Need Firmware for 8227L_demo Android 10 (MCU: JCCM20) | XDA Forums](https://xdaforums.com/t/need-firmware-for-8227l_demo-android-10-mcu-jccm20.4753571/)
+- [AC8227L 1/16GB alps 8227L_demo | XDA Forums](https://xdaforums.com/t/ac8227l-1-16gb-alps-8227l_demo-yt9216bj-or-yt9218-or-yt9260.4168563/)
+- [Collection of 8227l firmware | XDA Forums](https://xdaforums.com/t/collection-of-8227l-firmware-android-vers-6-9.4003935/)
+- [What Is Mcu Update Android? | SafeWiper](https://www.safewiper.com/blog/what-is-mcu-update-android.html)
+- [Which MTC is my Android headunit? | Android-Headunits.com](https://android-headunits.com/which-mtc-is-my-android-headunit/)
+- [No MCU information showing up in settings? | XDA Forums](https://xdaforums.com/t/no-mcu-information-showing-up-in-settings.4061297/)
+**Notes**: Critical diagnostic tool for identifying MCU firmware version and system hardware specifications. MCU (Microcontroller Unit) acts as hardware bridge between vehicle systems and Android OS, managing steering wheel controls, CANBUS communication, and vehicle-specific integrations. Menu displays MCU version (TS907, JCCM20, etc.), Android version, memory (DDR), storage (Flash), CPU details, and display resolution. Essential for verifying specifications before firmware updates - incorrect MCU firmware can brick the device. Common MCU versions: TS907 series for Junsun/MT8227L units, JCCM20 series for AC8227L Android 12/13 units. MCU version starting with "MTC" indicates board type (MTCB/MTCC/MTCD/MTCE). Use this menu before updating firmware to ensure compatibility. Alternative access via Settings → About or Settings → System → Update MCU. XDA forums contain comprehensive MCU firmware collections for various 8227L variants.
 
 ### 708 - Engineering Test Debugging
 **Status**: Undocumented
