@@ -902,9 +902,89 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **Notes**: Critical diagnostic tool for testing UART serial communication between Android system and MCU microcontroller. Interface provides real-time serial monitor with start/clear/stop controls. MCU acts as hardware bridge between vehicle systems (steering wheel controls, CANBUS, sensors) and Android OS. UART connection carries bidirectional commands and data between Android SoC and MCU. Use this menu to diagnose "MCU Uart Error" failures, verify serial communication after firmware updates or hardware repairs, and troubleshoot steering wheel control or CANBUS issues. Start button initiates communication test, output window displays real-time serial data stream, clear button resets display, stop button ends test. Common issues: garbled characters indicate wrong baud rate, no data suggests TX/RX swap or disconnection, random characters/resets indicate ground problems. Developers have reverse engineered MCU protocol from MainUI apk for custom implementations. Essential for debugging hardware integration problems and validating UART signal integrity. Related to menu 708 (Engineering Test Debugging) for additional diagnostic functions.
 
 ### 708 - Engineering Test Debugging
-**Status**: Undocumented
-**Purpose**: General engineering diagnostics
-**Notes**: Comprehensive system testing interface
+**Status**: ✅ Documented
+**Purpose**: Comprehensive engineering diagnostics and power management configuration
+**Interface**: Password-protected engineering menu with multiple subsections
+**Access**: Requires password **26959910** to enter
+**Password Dialog**:
+- "Enter password" prompt
+- Text field: "Please enter the password"
+- **back button**: Cancel and return to main menu
+- **enter button**: Submit password and access engineering menu
+
+**Menu Sections**:
+
+#### Power Management
+**Sleep Mode Settings**:
+- Configure shutdown behavior when ACC power turns off
+- **Sleep Mode**: Unit enters sleep state (low power) when ignition off
+  - Configurable timeout: 2 hours, 1 day, 2 days, or 3 days (varies by firmware)
+  - Warning: Sleep mode draws ~5W continuously, drains vehicle battery
+  - Unit never fully shuts down, always consuming power
+- **Direct Shutdown Mode**: Unit completely shuts down when ignition off
+  - Recommended to prevent battery drain
+  - No power consumption when vehicle off
+  - Requires reboot to take effect
+**Access**: Engineering Test Debugging → Sleep/Shutdown Settings → Direct Shutdown Mode → Reboot
+
+#### Phone
+**Function**: Phone connectivity diagnostics and testing
+**Options**: Phone-related hardware and software testing tools
+
+#### Connectivity
+**Function**: Network and wireless connectivity diagnostics
+**Options**: Testing tools for WiFi, Bluetooth, cellular connectivity
+
+#### Audio (Hardware Testing)
+**Function**: Comprehensive audio system testing and configuration
+**Access**: Scroll to Hardware Testing → Audio
+**Features**:
+- ALL audio levels configuration (advanced volume controls)
+- Audio hardware testing and diagnostics
+- Maximum volume level settings (0-10 scale)
+- Speaker output testing
+- Amplifier diagnostics
+**Recommended Settings**: Users report setting audio levels to maximum (level 10), then rebooting for best results
+
+**Alternative Access Methods**:
+- Factory Settings (8888) → USB Info → USB → "Engineering Mode" → Phone/Connectivity/Audio sections
+- Car Launcher FREE settings → Car Settings → Other menu → Engineer mode
+
+**Use Cases**:
+- Configure power management to prevent battery drain
+- Test phone connectivity and integration
+- Diagnose wireless connectivity issues
+- Configure advanced audio levels and test speaker output
+- Access hardware testing tools for diagnostics
+- Troubleshoot sleep mode battery drain problems
+- Switch between sleep mode and direct shutdown
+
+**Common Issues Resolved**:
+- **Battery drain**: Change from sleep mode to direct shutdown mode
+- **Audio too quiet**: Access Audio section, increase all levels to maximum (10)
+- **Unit won't sleep**: Configure sleep timeout or enable direct shutdown
+- **Connectivity problems**: Use Phone/Connectivity sections for diagnostics
+
+**XDA References**:
+- Password 26959910 confirmed for engineering test debugging access
+- Direct shutdown mode prevents battery drain (sleep mode draws ~5W)
+- Sleep timeout options: 2 hours minimum, up to 3 days (varies by firmware)
+- Some units missing sleep mode option - use engineering debug menu to access
+- Audio levels in Hardware Testing section control all volume parameters
+- Engineering mode also accessible via Factory Settings → USB Info → USB
+- Car Launcher FREE provides alternative access path
+- Reboot required after changing sleep/shutdown mode settings
+
+**Sources**:
+- [How to access Engineering Mode for AC8227L | XDA Forums](https://xdaforums.com/t/how-to-access-engineering-mode-for-ac8227l.4592425/)
+- [8227L YT9216BJ Head Unit | Page 2 | XDA Forums](https://xdaforums.com/t/8227l-yt9216bj-head-unit.4139307/page-2)
+- [ROOT Head unit 8227l | Page 9 | XDA Forums](https://xdaforums.com/t/root-head-unit-8227l.3855054/page-9)
+- [Password for factory setting and Engineering test debugging | YouTube](https://www.youtube.com/watch?v=XK8tQzK9jYU)
+- [All passwords (Factory settings & Engineering test debugging) | YouTube](https://www.youtube.com/watch?v=gTW_LoE9-Aw)
+- [Missing sleep mode in F9212B | XDA Forums](https://xdaforums.com/t/missing-sleep-mode-in-f9212b.4466443/)
+- [Android radio sleep mode current draw | Honda Odyssey Forum](https://www.odyclub.com/threads/android-radio-sleep-mode-current-draw.381747/)
+
+**Notes**: Password-protected (26959910) comprehensive engineering diagnostics menu with critical power management, phone, connectivity, and audio testing features. Most important function: switching from sleep mode to direct shutdown mode to prevent battery drain - sleep mode draws ~5W continuously even when vehicle off, draining battery. Direct shutdown mode completely powers off unit when ACC off, preventing battery drain. Engineering menu contains hardware testing section with advanced audio level controls - set all audio levels to maximum (10) for best volume. Phone section provides phone connectivity diagnostics. Connectivity section tests WiFi/Bluetooth/cellular. Alternative access via Factory Settings → USB Info → USB → Engineering Mode. Reboot required after changing power management settings. Essential for resolving common battery drain and audio volume issues on 8227L units.
 
 ---
 
