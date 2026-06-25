@@ -348,14 +348,65 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **Notes**: Critical for configuring panel buttons after firmware changes or when buttons stop working. Button assignments use AD (analog-digital) values from resistor network. Supports both momentary functions and toggle functions. Arrow symbols (→) indicate additional/advanced functions. Some units may be locked by manufacturer preventing remapping.
 
 ### 309 - Tire Pressure Settings
-**Status**: Undocumented
-**Purpose**: TPMS (Tire Pressure Monitoring System) integration
-**Notes**: Configuration for tire pressure sensors
+**Status**: ✅ Documented
+**Purpose**: Configure TPMS (Tire Pressure Monitoring System) alarm thresholds
+**Interface**: Slider-based configuration screen for tire pressure and temperature limits
+**Settings**:
+- **Left front tire Pressure setting**:
+  - upper: 270 (kPa or PSI) - high pressure alarm threshold
+  - lower: 170 (kPa or PSI) - low pressure alarm threshold
+- **Left rear tire Pressure setting**:
+  - upper: 270 (kPa or PSI) - high pressure alarm threshold
+  - lower: 170 (kPa or PSI) - low pressure alarm threshold
+- **Right front tire Pressure setting**:
+  - upper: 270 (kPa or PSI) - high pressure alarm threshold
+  - lower: 170 (kPa or PSI) - low pressure alarm threshold
+- **Right back tire Pressure setting**:
+  - upper: 270 (kPa or PSI) - high pressure alarm threshold
+  - lower: 170 (kPa or PSI) - low pressure alarm threshold
+- **Alarm temperature setting**:
+  - upper: 65°C - high temperature alarm threshold
+**Buttons**:
+- **OK**: Save TPMS configuration
+- **default**: Reset to factory default values (270/170 pressure, 65°C temperature)
+**XDA References**:
+- TPMS listed as optional feature on MTK 8227L VW head units
+- Advanced configurations accessible via code 8888
+- Custom firmware (YT9216B) includes TPMS functionality with cheap Chinese USB units
+- Some units have Bluetooth Low Energy TPMS sensor compatibility issues (requires Bluetooth 4.0)
+- TPMS typically add-on feature, not standard on all 8227L units
+- USB TPMS systems work with Android head units (Chinese language notification issues on some)
+**TPMS System Details**:
+- Monitors tire pressure and temperature in real-time
+- Transmits statistics to receiver/head unit
+- Sounds warning alarm when parameters exceeded
+- Custom upper/lower limit alarm values
+- May use USB dongle or Bluetooth 4.0 sensors
+- Integration via CAN or LIN protocols on some vehicles
+**Notes**: Configures alarm thresholds for external TPMS sensor system. Values 270/170 likely PSI or kPa (check sensor documentation). Temperature alarm at 65°C protects against overheating tires. Requires compatible TPMS sensor hardware (USB dongle or Bluetooth 4.0 sensors). Not all 8227L units include TPMS functionality - may require specific firmware variant or hardware.
 
 ### 310 - Lock Screen Mode Settings
-**Status**: Undocumented
-**Purpose**: Lock screen behavior configuration
-**Notes**: May control password lock screen
+**Status**: ✅ Documented
+**Purpose**: Configure lock screen display mode when unit enters standby
+**Interface**: Two-option radio button selection
+**Options**:
+- **Time mode**: Display clock/time/date when unit is in standby (screen shows time when ACC power off)
+- **Screen off mode** (default/selected): Turn screen completely off when unit enters standby
+**Buttons**:
+- **OK**: Save lock screen mode configuration
+**Behavior**:
+- **Time mode**: When power button pressed or ACC turned off, screen displays time/date information (standby clock display)
+- **Screen off mode**: When power button pressed or ACC turned off, screen turns completely off (no display)
+**Related Settings**:
+- Standby time setting available in Common menu
+- Display backlight settings control daytime/nighttime brightness
+- Related to ACC (accessory power) behavior when ignition turned off
+**XDA References**:
+- Older Android car radios had sleep mode option when ACC off
+- 8227L units: 4PDA forum discussions indicate shutdown delay feature not available
+- Lock screen timeout issues reported (86200 second countdown on some units)
+- Cold boot problematic on some firmware versions
+**Notes**: Controls what happens to screen display when unit enters standby/ACC off state. Time mode shows clock for quick time check without starting full system. Screen off mode saves power and reduces distraction. Setting typically persists across power cycles. Factory default is screen off mode.
 
 ### 311 - Key Light Settings
 **Status**: Undocumented
