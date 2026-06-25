@@ -7,9 +7,13 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 ## Mounting Vehicle Settings (100 Series)
 
 ### 101 - Backcar Delay Time
-**Status**: Undocumented
-**Purpose**: Likely controls delay before backup camera activates
-**Notes**:
+**Status**: ✅ Documented
+**Purpose**: Controls delay before backup camera view activates when shifting into reverse gear
+**Interface**: Slider control (adjustable in seconds)
+**Range**: 0.5s - several seconds
+**Default**: 0.5s
+**Screenshot**: [101-backcar-delay-time.png](screenshots/101-backcar-delay-time.png)
+**Notes**: Prevents instant camera switching if briefly engaging reverse gear. Allows fine-tuning activation timing.
 
 ### 102 - Mute Settings
 **Status**: Undocumented
