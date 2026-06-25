@@ -110,9 +110,23 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **Notes**: Critical tool for debugging CANBUS communication, steering wheel controls, and vehicle integration. Shows real-time protocol data stream for troubleshooting.
 
 ### 108 - Power Amplifier Settings
-**Status**: Undocumented
-**Purpose**: Audio amplifier configuration
-**Notes**: May control external amp settings
+**Status**: ✅ Documented
+**Purpose**: Power amplifier gain/output level configuration
+**Interface**: Percentage slider with control buttons
+**Options**:
+- **Percent slider**: Amplifier power level (0-100%)
+- **Minus/Plus buttons**: Adjust amplifier power
+- **OK button**: Save settings
+- **default button**: Reset to factory default level
+**Range**: 0-100% (currently set to 100)
+**XDA References**:
+- Access via factory settings (password 8888)
+- Recommended to set around 50% to avoid distortion
+- Can activate DSP effects (set to value "1")
+- Can enable AMP (set to value "1")
+- VOLUME menu section in factory settings controls all audio levels
+- Amplifier chip varies by manufacturer
+**Notes**: Controls power amplifier output gain. Setting too high causes distortion. Recommended around 50%. Used with external amplifiers or to boost internal amp output. DSP and AMP activation available in related settings.
 
 ---
 
