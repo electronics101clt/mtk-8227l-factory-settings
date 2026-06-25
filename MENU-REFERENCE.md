@@ -27,9 +27,20 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **Notes**: Voltage threshold determines when ACC signal is recognized. All checkboxes enabled by default.
 
 ### 103 - Protocol Settings
-**Status**: Undocumented
-**Purpose**: Communication protocol configuration (CAN bus, steering wheel controls)
-**Notes**:
+**Status**: ✅ Documented
+**Purpose**: CAN bus protocol configuration for vehicle integration
+**Interface**: CAN Set screen (V9.10.0.disconnect)
+**Options**:
+- **Vehicle manufacturer selection**: Raise, XINPU, Hiworld, XBS, BNR, Daojun
+- **Car model selection**: Hyundai KIA, GM, Peugeot, Jeep, Mazda, GAC, BAIC
+- **CAN ID display**: Shows current CAN identifier (e.g., 1006002)
+- **Network button**: Protocol configuration options
+**XDA References**:
+- Raise CAN bus adapters translate CAN to serial TTL (19200 baud, 8N1)
+- Settings include NORMAL/SWAP options for CAN TYPE/CANBUS
+- Required for steering wheel control configuration
+- Warning: Some users report menu kicks them out after access
+**Notes**: Configures vehicle-specific CAN bus protocol for steering wheel controls, vehicle data integration. Critical for proper vehicle interface communication.
 
 ### 104 - Reboot
 **Status**: Documented
