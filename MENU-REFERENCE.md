@@ -584,9 +584,37 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **Notes**: Menu 701 provides comprehensive audio, boot logo, and USB/DVR configuration despite being named "USB Settings". Contains master volume controls for all audio streams, full EQ/sound processing settings, custom boot logo upload interface, and USB port protocol configuration. GS = GPS/navigation guidance. BackCar audio preserved during silence mode for safety. Assistant/Alternate volumes control voice assistant and alternate audio stream levels. Bass/Alto/Treble provide 3-band EQ. Balance controls L/R speaker distribution. Loudness compensation boosts low frequencies at low volumes. Boot logo customization allows branding/personalization using BMP/PNG images via USB drive or internal storage. USB configuration controls protocol versions (USB 2.0) for both ports and device/host/OTG mode selection. DVR Enhancement enables built-in dashcam recording functionality using USB cameras connected to USB0/USB1 ports - recordings automatically saved to GPS card/storage. Engineer mode provides access to advanced phone/connectivity/audio diagnostics. Related to menu 108 (Power Amplifier Settings) for overall gain control. PIN code 5678 provides direct access to boot logo window. Menu 701 is the most comprehensive settings interface with three major sidebars (Audio/Logo/Other).
 
 ### 702 - Clear Test File
-**Status**: Undocumented
-**Purpose**: Remove test/diagnostic files
-**Notes**: Cleanup tool for manufacturing test data
+**Status**: ✅ Documented
+**Purpose**: Remove built-in factory test files for audio and video
+**Interface**: Confirmation dialog with OK/Cancel buttons
+**Dialog Text**: "Clear data - Whether clear built-in clearance test files of audio and video?"
+**Buttons**:
+- **OK**: Delete all built-in test audio/video files from system
+- **Cancel**: Abort cleanup operation without deleting files
+**Function**: Manufacturing quality control cleanup tool
+- Removes sample audio files used for speaker/amplifier testing during production
+- Removes sample video files used for display/output testing during production
+- Frees up storage space occupied by factory test media
+- One-time cleanup operation (files cannot be restored after deletion)
+**Use Cases**:
+- Post-production cleanup before shipping to customers
+- End-user storage optimization (remove unused test files)
+- Quality control departments clearing test data after QC pass
+- Resellers/refurbishers cleaning up factory test content
+**File Types Affected**:
+- Built-in audio test files (speaker test tones, audio calibration samples)
+- Built-in video test files (display test patterns, video playback samples)
+- Manufacturing clearance/quality control test media
+**XDA References**:
+- Factory settings accessed via PIN code 8888
+- Factory menu includes "export Config" option (creates metazone.bin on USB)
+- Test points used for FORMAT mode during manufacturing
+- No specific XDA documentation found for this menu function
+**Sources**:
+- [8227L android unit 8.1 chinese | XDA Forums](https://xdaforums.com/t/8227l-android-unit-8-1-chinese.3905535/)
+- [Collection of 8227l firmware | XDA Forums](https://xdaforums.com/t/collection-of-8227l-firmware-android-vers-6-9.4003935/)
+- [ALPS FF5000 & other headunits (8227L) pin codes | XDA Forums](https://xdaforums.com/t/alps-ff5000-other-headunits-8227l-pin-codes-for-factory-menus.4269431/)
+**Notes**: Cleanup tool for freeing storage space by removing built-in factory test media files. These test files are used during manufacturing for quality control verification of audio output (speakers/amplifiers) and video output (display/HDMI). Safe to delete on consumer units - files serve no purpose after manufacturing QC is complete. Operation is permanent and cannot be undone. Useful for reclaiming storage space on units with limited internal memory.
 
 ### 703 - Debug Touch
 **Status**: Undocumented
