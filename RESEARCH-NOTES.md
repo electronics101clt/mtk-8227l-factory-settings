@@ -163,3 +163,34 @@ User reported navigation bar moved from top (integrated with status bar) to bott
 - [8227L YT9216BJ Head Unit | XDA Forums](https://xdaforums.com/t/8227l-yt9216bj-head-unit.4139307/)
 
 **Notes**: Not a numbered main menu entry. Utility screen accessible from CANBUS/protocol configuration menus. Critical for updating vehicle-specific CANBUS protocol definitions.
+
+---
+
+### Unknown Screen: "Close the car small light"
+
+**Discovered**: 2026-06-25
+**Access**: Unknown - appeared during menu navigation
+
+**Interface**:
+- Background image showing person/face
+- Text: "Close the car small light"
+- Multiple "Time" labels visible
+- Glitched/corrupted appearance
+
+**Purpose**: Unknown
+- Possibly vehicle lighting control screen
+- Could be camera test screen
+- May be corrupted display/overlay issue
+- Not a standard numbered menu item
+
+**XDA Research**:
+- No specific documentation found for this screen
+- Factory settings include camera and icon deactivation options
+- Menu icons can be managed in factory settings
+- Camera display issues documented (loops, NO SIGNAL errors)
+
+**Sources**:
+- [8227L android unit 8.1 chinese | XDA Forums](https://xdaforums.com/t/8227l-android-unit-8-1-chinese.3905535/)
+- [8227L Demo issues - rear view camera | XDA Forums](https://xdaforums.com/t/8227l-demo-issues-rear-view-camera.4070573/)
+
+**Notes**: Anomalous screen encountered during menu exploration. Not part of numbered menu structure (100/300/700 series). May be test screen, lighting control, or display artifact. Requires further investigation.
