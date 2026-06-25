@@ -409,9 +409,36 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **Notes**: Controls what happens to screen display when unit enters standby/ACC off state. Time mode shows clock for quick time check without starting full system. Screen off mode saves power and reduces distraction. Setting typically persists across power cycles. Factory default is screen off mode.
 
 ### 311 - Key Light Settings
-**Status**: Undocumented
-**Purpose**: Button backlight/illumination settings
-**Notes**: Controls physical button LED illumination
+**Status**: ✅ Documented
+**Purpose**: Configure RGB LED backlight for physical buttons
+**Interface**: RGB color sliders with brightness and flicker controls
+**Settings**:
+- **red**: RGB red channel (0-255) - currently 0
+- **green**: RGB green channel (0-255) - currently 0
+- **blue**: RGB blue channel (0-255) - currently 0
+- **Brightness level**: Overall LED brightness (0-100%) - currently 100
+- **flicker frequency**: PWM flicker rate for LED dimming (0-100) - currently 0
+**Color Palette**: Quick selection buttons (red, orange, yellow, green, indigo, blue, white)
+**Dialog**: "Please open the debug button lamp lights!!" - appears when accessing RGB controls
+**Hardware Limitations**:
+- **RGB error message**: "Please open the debug button lamp lights!!" indicates RGB controller NOT fitted to unit
+- **Budget units**: Only white LEDs installed (no RGB hardware), RGB settings non-functional
+- **Premium units**: True RGB LEDs available on higher-end 8227L models
+- Manufacturer cost-cutting: RGB controller and RGB LEDs omitted on cheaper units
+**XDA References**:
+- Accessed via factory settings code 8888 → Key light settings
+- RGB slider available but only works on units with RGB LED hardware
+- Budget units have white-only LEDs despite RGB controls appearing in menu
+- Some units have 3 checkboxes below slider: keep lights on option, flicker option, third unknown
+- Settings may not persist after Magisk rooting on some units
+- Can deselect "open light" to disable LEDs during daytime
+- Lights typically auto-activate with car headlights (connected to illumination wire)
+**Flicker Frequency**:
+- Controls PWM (Pulse Width Modulation) frequency for LED brightness control
+- Lower values = slower flicker (may be visible)
+- Higher values = faster flicker (smoother dimming)
+- Setting 0 = no PWM flicker (full DC brightness control)
+**Notes**: RGB color mixing only functional on premium units with actual RGB LED hardware. Budget units display RGB controls but only have white LEDs. "Debug button lamp lights" error = hardware limitation, not fixable in software. Brightness level and flicker frequency should work on all units. Color palette provides quick presets. Checkboxes below sliders control auto-on behavior and flicker enable/disable.
 
 ---
 
