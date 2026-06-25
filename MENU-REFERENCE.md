@@ -50,7 +50,7 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 ### 105 - Camera And Protocol Parameter Settings
 **Status**: ✅ Documented
 **Purpose**: Comprehensive backup/reverse camera and 360 camera configuration
-**Interface**: Reversing Settings submenu with 8 options
+**Interface**: Reversing Settings submenu with 17+ options
 **Options**:
 - **Reverse track settings**: Parking trajectory line configuration
 - **Reverse radar settings**: Parking sensor/radar overlay configuration
@@ -60,11 +60,22 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 - **Door information settings**: Door status integration with camera display
 - **Agreement party accused of settings**: (Translation unclear - likely protocol agreement settings)
 - **360 Camera**: 360-degree camera system configuration
+- **Audio port**: Audio routing for reverse camera (speakers selection)
+- **Reverse lay the auxiliary line**: Auxiliary/trajectory line overlay enable/disable
+- **Pop air settings**: (Translation unclear - possibly parking sensor alerts)
+- **Reversing camera angle switch settings**: Camera view angle adjustment
+- **Parking radar settings**: Parking sensor configuration and thresholds
+- **Right view switch Settings**: Right-side camera view configuration
+- **Reverse video resolution settings**: Camera resolution selection
+- **Software astern**: Software-based reverse detection (vs hardware trigger)
+- **SYNC switch**: Synchronization settings for multi-camera systems
 **XDA References**:
 - Factory settings access via password 8888
 - TCON/video settings must be configured for third-party video
 - Common issues: "NO SIGNAL" errors, camera loops
-**Notes**: Comprehensive camera system configuration including trajectory overlays, radar integration, and multi-camera setups. Critical for proper backup camera functionality.
+- Parking radar sensors may not produce beep sounds (configuration issue)
+- Assistant lines sometimes built into camera (cannot disable in software)
+**Notes**: Comprehensive camera system configuration including trajectory overlays, radar integration, and multi-camera setups. Critical for proper backup camera functionality. Menu contains 17+ scrollable options.
 
 ### 106 - Help and Feedback
 **Status**: Undocumented
