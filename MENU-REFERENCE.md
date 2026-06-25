@@ -751,9 +751,34 @@ Complete listing of all menu entries in Parameter Settings ver2.7_20181022.
 **Notes**: Critical app management interface controlling startup behavior and audio focus. BOOTUP APPS SETTINGS limits auto-start to 5 apps maximum to improve boot time and system performance. AUDIO MUTEX APPS SETTINGS controls audio focus exclusivity - essential for managing conflicts between navigation voice guidance and media playback (radio, music apps). Common problem: navigation apps take exclusive audio focus, mute radio/media, then don't properly restore audio after voice prompt ends. NAVIGATION APPS SETTINGS specifically manages navigation app audio integration and interruption behavior. Settings require system restart to take effect. Related to Android Automotive audio focus system (exclusive/concurrent/reject modes). Audio mutex configuration attempts to resolve issues where radio remains muted after navigation speaks, though XDA users report mixed success with these settings.
 
 ### 705 - Touch Test
-**Status**: Undocumented
-**Purpose**: Touchscreen testing utility
-**Notes**: Interactive touch calibration test
+**Status**: ✅ Documented
+**Purpose**: Fullscreen touchscreen responsiveness test
+**Interface**: Black screen with instruction prompt
+**Text**: "Please touch the screen to test"
+**Controls**: Back button (top-right corner)
+**Function**: Interactive touch test interface for verifying screen responsiveness
+- Touch anywhere on screen to test touch detection
+- Verifies entire screen area responds to touch input
+- Identifies dead zones (unresponsive areas)
+- Simple visual feedback for touch testing
+**Use Cases**:
+- Testing for touchscreen dead zones
+- Verifying touch response after calibration (menu 303)
+- Quality control testing during manufacturing
+- Diagnosing touchscreen hardware issues
+- Checking for unresponsive screen regions (e.g., X0-X200 left side problems)
+**Related**:
+- Menu 303 (Touch Settings): Calibration and X/Y axis configuration
+- Menu 703 (Debug Touch): Coordinate debugging with detailed diagnostics
+- Menu 308 (Physical Buttons Study): Button mapping and learning
+**XDA References**:
+- Factory settings accessed via PIN code 8888
+- Common issue: Left side X0-X200 unresponsive after hard reset
+- Cold weather can affect touchscreen reliability on 8227L units
+- Part of factory settings touch-related functions
+**Sources**:
+- [8227L android unit 8.1 chinese | XDA Forums](https://xdaforums.com/t/8227l-android-unit-8-1-chinese.3905535/)
+**Notes**: Simple fullscreen touch test for verifying screen responsiveness. Drag finger across entire screen to identify dead zones or unresponsive areas. Minimal interface - just touch the screen and observe response. Use menu 703 (Debug Touch) for detailed coordinate debugging. Use menu 303 (Touch Settings) for calibration if issues found.
 
 ### 706 - Bluetooth Connect Pair Set
 **Status**: Undocumented
